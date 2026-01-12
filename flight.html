@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Flight Tickets - 247Trips</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-..." crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #f0f4f8;
+        }
+        .card {
+            border-radius: 1rem;
+        }
+        .btn-check:checked + .btn {
+            background-color: #ffc107;
+            color: #000;
+        }
+        .dropdown-custom {
+            top: 100%;
+            z-index: 1050;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid bg-primary bg-opacity-75 py-4">
+    <div class="container px-4">
+
+        <!-- Trip Type -->
+        <div class="btn-group mb-3" role="group">
+            <input type="radio" class="btn-check" name="TripType" id="oneWay" checked>
+            <label class="btn btn-outline-light btn-sm" for="oneWay">One Way</label>
+
+            <input type="radio" class="btn-check" name="TripType" id="roundTrip">
+            <label class="btn btn-outline-light btn-sm" for="roundTrip">Round Trip</label>
+
+            <input type="radio" class="btn-check" name="TripType" id="multiCity">
+            <label class="btn btn-outline-light btn-sm" for="multiCity">Multicity</label>
+        </div>
+
+        <form id="flightSearchForm" method="post">
+
+            <div class="card shadow">
+                <div class="card-body p-0">
+                    <div class="row g-0 align-items-stretch">
+                        <input type="hidden" id="FromCode" name="FromCode">
+                        <input type="hidden" id="ToCode" name="ToCode">
+
+                        <!-- FROM -->
+                        <div class="col-md-2 border-end p-3 position-relative">
+                            <small class="text-muted fw-semibold">FROM</small>
+                            <input type="text" class="form-control border-0 p-0 fw-bold" id="fromCity" placeholder="From" autocomplete="off" required>
+                            <div id="fromDropdown" class="position-absolute bg-white shadow rounded w-100 d-none dropdown-custom"></div>
+                        </div>
+
+                        <!-- TO -->
+                        <div class="col-md-2 border-end p-3 position-relative">
+                            <small class="text-muted fw-semibold">TO</small>
+                            <input type="text" class="form-control border-0 p-0 fw-bold" id="toCity" placeholder="To" autocomplete="off" required>
+                            <div id="toDropdown" class="position-absolute bg-white shadow rounded w-100 d-none dropdown-custom"></div>
+                        </div>
+
+                        <!-- DEPARTURE -->
+                        <div class="col-md-2 border-end p-3">
+                            <small class="text-muted fw-semibold">DEPARTURE</small>
+                            <input type="date" class="form-control border-0 p-0 fw-bold" id="departureDate" required>
+                        </div>
+
+                        <!-- RETURN -->
+                        <div class="col-md-2 border-end p-3">
+                            <small class="text-muted fw-semibold">RETURN</small>
+                            <input type="date" class="form-control border-0 p-0 fw-bold" id="returnDate" disabled>
+                        </div>
+
+                        <!-- TRAVELLER & CLASS -->
+                        <div class="col-md-2 border-end p-3 position-relative">
+                            <small class="text-muted fw-semibold">TRAVELLER & CLASS</small>
+                            <div class="fw-bold" id="travellerSummary">1 Traveller</div>
+                            <small class="text-muted" id="selectedClass">Economy</small>
+
+                            <div id="travellerDropdown" class="position-absolute bg-white shadow rounded p-3 d-none w-100 dropdown-custom">
+
+                                <!-- Adults -->
+                                <div class="d-flex justify-content-between mb-2">
+                                    <div>
+                                        <div class="fw-semibold">Adults</div>
+                                        <small class="text-muted">(12+ Years)</small>
+                                    </div>
+                                    <div class="btn-group btn-group-sm">
+                                        <button type="button" class="btn btn-outline-secondary" onclick="changeCount('adult', -1)">−</button>
+                                        <span class="btn btn-light" id="adultCount">1</span>
+                                        <button type="button" class="btn btn-outline-secondary" onclick="changeCount('adult', 1)">+</button>
+                                    </div>
+                                </div>
+
+                                <!-- Children -->
+                                <div class="d-flex justify-content-between mb-2">
+                                    <div>
+                                        <div class="fw-semibold">Children</div>
+                                        <small class="text-muted">(2–12 Years)</small>
+                                    </div>
+                                    <div class="btn-group btn-group-sm">
+                                        <button type="button" class="btn btn-outline-secondary" onclick="changeCount('child', -1)">−</button>
+                                        <span class="btn btn-light" id="childCount">0</span>
+                                        <button type="button" class="btn btn-outline-secondary" onclick="changeCount('child', 1)">+</button>
+                                    </div>
+                                </div>
+
+                                <!-- Infant -->
+                                <div class="d-flex justify-content-between mb-3">
+                                    <div>
+                                        <div class="fw-semibold">Infant</div>
+                                        <small class="text-muted">(0–2 Years)</small>
+                                    </div>
+                                    <div class="btn-group btn-group-sm">
+                                        <button type="button" class="btn btn-outline-secondary" onclick="changeCount('infant', -1)">−</button>
+                                        <span class="btn btn-light" id="infantCount">0</span>
+                                        <button type="button" class="btn btn-outline-secondary" onclick="changeCount('infant', 1)">+</button>
+                                    </div>
+                                </div>
+
+                                <!-- Class -->
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="travelClass" checked value="Economy">
+                                        <label class="form-check-label">Economy</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="travelClass" value="Premium Economy">
+                                        <label class="form-check-label">Premium Economy</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="travelClass" value="Business">
+                                        <label class="form-check-label">Business</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="travelClass" value="First Class">
+                                        <label class="form-check-label">First Class</label>
+                                    </div>
+                                </div>
+
+                                <button type="button" class="btn btn-primary w-100 btn-sm" onclick="applyTravellers()">Done</button>
+                            </div>
+                        </div>
+
+                        <!-- SEARCH BUTTON -->
+                        <div class="col-md-2 d-flex">
+                            <button type="submit" class="btn btn-warning fw-bold fs-4 w-100 rounded-0">
+                                SEARCH
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <!-- Special Fares -->
+        <div class="mt-3 text-white">
+            <span class="fw-semibold me-3">Special Fares (Optional):</span>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="fare">
+                <label class="form-check-label">Students</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="fare">
+                <label class="form-check-label">Senior Citizen</label>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+
+<script>
+    // Trip Type: enable/disable return date
+    const oneWay = document.getElementById("oneWay");
+    const roundTrip = document.getElementById("roundTrip");
+    const returnDate = document.getElementById("returnDate");
+
+    oneWay.addEventListener("change", () => { returnDate.disabled = true; returnDate.value = ""; });
+    roundTrip.addEventListener("change", () => { returnDate.disabled = false; returnDate.required = true; });
+
+    // Set min for return date
+    document.getElementById("departureDate").addEventListener("change", function () {
+        returnDate.min = this.value;
+    });
+
+    // Traveller dropdown logic
+    let counts = { adult: 1, child: 0, infant: 0 };
+    const travellerBox = document.getElementById("travellerSummary").parentElement;
+    const dropdown = document.getEle
