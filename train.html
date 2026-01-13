@@ -1,70 +1,186 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Book Train Tickets | 247Trips</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <title>Book Train Tickets - 247Trips</title>
 
-    <!-- Bootstrap 5 CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        body {
-            background-color: #f4f6f9;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css" />
 </head>
 <body>
 
-<!-- HERO SECTION -->
-<div class="container-fluid bg-primary bg-opacity-75 py-5">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm sticky-top"
+        >
 
+        <div class="container-fluid px-4">
+
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold text-primary" href="/">
+                247Trips
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                <!-- LEFT MENU -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-3">
+
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="/Flight/FlightIndex">
+                            <i class="bi bi-airplane fs-5 mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Flights</span>
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="/Bus/BusIndex">
+                            <i class="bi bi-bus-front fs-5 mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Bus</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="/Train/TrainIndex">
+                            <i class="bi bi-train-front fs-5 mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Trains</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="/Hotel/HotelIndex">
+                            <i class="bi bi-building fs-5 mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Hotels</span>
+                        </a>
+
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="/Cab/CabIndex">
+                            <i class="bi bi-taxi-front fs-5 mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Cabs</span>
+                        </a>
+
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="/Holiday/HolidayIndex">
+                            <i class="bi bi-sun fs-5 mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Holidays</span>
+                        </a>
+
+                    </li>
+
+                </ul>
+
+                <!-- RIGHT MENU -->
+                <ul class="navbar-nav ms-auto gap-3">
+
+                    <!-- Home -->
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center rounded-3" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="/">
+                            <i class="bi bi-house-door mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Home</span>
+                        </a>
+                    </li>
+
+                        <!-- Login styled like other buttons -->
+                        <li class="nav-item text-center">
+                            <a class="nav-link fw-semibold d-flex flex-column align-items-center rounded-3 px-3" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="/Account/Login">
+                                <i class="bi bi-person-circle mb-0"
+                                   onmouseenter="iconMove(this)"
+                                   onmouseleave="iconBack(this)"></i>
+                                <span class="small">Login/Signup</span>
+                            </a>
+
+                        </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- PAGE CONTENT -->
+    <main class="container-fluid px-0">
+        
+
+<!-- HERO SECTION WITH BACKGROUND IMAGE -->
+<div class="container-fluid py-5 text-white"
+     style="background:url('https://plus.unsplash.com/premium_photo-1676122795719-6fa9374a46c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VHJhaW58ZW58MHx8MHx8fDA%3D') center/cover;">
+    <div class="container py-5 bg-dark bg-opacity-50 rounded">
     <div class="container">
 
-        <!-- TOP BAR -->
-        <div class="d-flex flex-wrap align-items-center text-white fw-semibold gap-3 mb-4">
-            <span class="bg-white text-primary px-3 py-2 rounded-pill">
+        <!-- TOP OPTIONS -->
+        <div class="d-flex flex-wrap align-items-center gap-3 fw-semibold mb-4">
+
+            <span class="bg-white text-primary px-3 py-2 rounded-pill shadow"
+                  onmouseenter="glowIn(this)" onmouseleave="glowOut(this)">
                 🚆 Train Tickets
             </span>
+
             <span>PNR Status</span>
-            <span>Live Train Status</span>
+            <span>Live Train</span>
             <span>Seat Availability</span>
             <span>IRCTC Meals</span>
+            <span>Railway Alerts</span>
 
             <div class="ms-auto fs-5 fw-bold">
-                Welcome to 247Trips
+                Your Rail Journey Starts Here
             </div>
         </div>
 
         <!-- SEARCH CARD -->
-        <div class="bg-white rounded shadow-lg p-4">
+        <div class="bg-white rounded shadow-lg p-4 text-dark"
+             onmouseenter="glowIn(this)" onmouseleave="glowOut(this)">
 
-            <h4 class="fw-bold mb-3">Search & Book Train Tickets</h4>
-            <p class="text-muted">Fast, simple and secure train booking across India</p>
+            <h4 class="fw-bold mb-2">Search & Book Trains</h4>
+            <p class="text-muted mb-4">Fast, secure and real-time Indian Rail booking</p>
 
             <div class="row g-3 align-items-end">
 
-                <!-- FROM -->
                 <div class="col-md-3">
-                    <label class="form-label fw-semibold">From Station</label>
-                    <input type="text" class="form-control" placeholder="Enter source station">
+                    <label class="fw-semibold">From</label>
+                    <input type="text" class="form-control" placeholder="Source Station">
                 </div>
 
-                <!-- TO -->
                 <div class="col-md-3">
-                    <label class="form-label fw-semibold">To Station</label>
-                    <input type="text" class="form-control" placeholder="Enter destination station">
+                    <label class="fw-semibold">To</label>
+                    <input type="text" class="form-control" placeholder="Destination Station">
                 </div>
 
-                <!-- DATE -->
                 <div class="col-md-3">
-                    <label class="form-label fw-semibold">Journey Date</label>
+                    <label class="fw-semibold">Journey Date</label>
                     <input type="date" class="form-control">
                 </div>
 
-                <!-- CLASS -->
                 <div class="col-md-2">
-                    <label class="form-label fw-semibold">Class</label>
+                    <label class="fw-semibold">Class</label>
                     <select class="form-select">
                         <option>All Classes</option>
                         <option>Sleeper</option>
@@ -74,42 +190,478 @@
                     </select>
                 </div>
 
-                <!-- SEARCH -->
                 <div class="col-md-1 d-grid">
-                    <button class="btn btn-warning fw-bold fs-5">
+                    <button class="btn btn-warning fw-bold fs-5"
+                            onmouseenter="glowIn(this)" onmouseleave="glowOut(this)">
                         Search
                     </button>
                 </div>
 
             </div>
-
         </div>
 
-        <!-- FEATURES -->
-        <div class="row text-white text-center mt-5">
-            <div class="col-md-3">
-                <h5 class="fw-bold">✔ Live Status</h5>
-                <p class="small">Track your train anytime</p>
+    </div>
+
+    </div>
+
+</div>
+<h3 class="text-center fw-bold mt-5 mb-4">Explore More With 247Trips</h3>
+<div class="row text-center g-4">
+
+    <!-- Feature Item -->
+    <div class="col-6 col-md-3 col-lg-1 mx-auto" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)">
+        <div class="bg-white rounded-circle p-3 d-flex justify-content-center align-items-center shadow"style="width:80px; height:80px; margin:auto;">
+            <i class="bi bi-card-checklist fs-3 text-primary"></i>
+        </div>
+        <p class="mt-2 fw-semibold text-black">PNR Status</p>
+    </div>
+
+    <div class="col-6 col-md-3 col-lg-1 mx-auto" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)">
+        <div class="bg-white rounded-circle p-3 d-flex justify-content-center align-items-center shadow" 
+             style="width:80px; height:80px; margin:auto;">
+            <i class="bi bi-train-front fs-3 text-primary"></i>
+        </div>
+        <p class="mt-2 fw-semibold text-black">Train Coach Position</p>
+    </div>
+
+    <div class="col-6 col-md-3 col-lg-1 mx-auto" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)">
+        <div class="bg-white rounded-circle p-3 d-flex justify-content-center align-items-center shadow" 
+             style="width:80px; height:80px; margin:auto;">
+            <i class="bi bi-clock-history fs-3 text-primary"></i>
+        </div>
+        <p class="mt-2 fw-semibold text-black">Live Train Status</p>
+    </div>
+
+    <div class="col-6 col-md-3 col-lg-1 mx-auto" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)">
+        <div class="bg-white rounded-circle p-3 d-flex justify-content-center align-items-center shadow" 
+             style="width:80px; height:80px; margin:auto;">
+            <i class="bi bi-calendar-check fs-3 text-primary"></i>
+        </div>
+        <p class="mt-2 fw-semibold text-black">Train Time Table</p>
+    </div>
+
+    <div class="col-6 col-md-3 col-lg-1 mx-auto" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)">
+        <div class="bg-white rounded-circle p-3 d-flex justify-content-center align-items-center shadow" 
+             style="width:80px; height:80px; margin:auto;">
+            <i class="bi bi-person-check fs-3 text-primary"></i>
+        </div>
+        <p class="mt-2 fw-semibold text-black">Seat Availability</p>
+    </div>
+
+    <div class="col-6 col-md-3 col-lg-1 mx-auto" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)">
+        <div class="bg-white rounded-circle p-3 d-flex justify-content-center align-items-center shadow" 
+             style="width:80px; height:80px; margin:auto;">
+            <i class="bi bi-file-earmark-text fs-3 text-primary"></i>
+        </div>
+        <p class="mt-2 fw-semibold text-black">Train Charts</p>
+    </div>
+
+    <div class="col-6 col-md-3 col-lg-1 mx-auto" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)">
+        <div class="bg-white rounded-circle p-3 d-flex justify-content-center align-items-center shadow" 
+        style="width:80px; height:80px; margin:auto;">
+            <i class="bi bi-egg-fried fs-3 text-primary"></i>
+        </div>
+        <p class="mt-2 fw-semibold text-black">IRCTC Meals</p>
+    </div>
+
+</div>
+<div class="container my-5">
+
+    <h2 class="text-center fw-bold mb-5">Top Train Ticket Routes</h2>
+
+    <div class="row g-4">
+
+        <!-- Card -->
+        <div class="col-md-4">
+            <div class="p-4 rounded border bg-light"
+                 onmouseenter="glowIn(this)"
+                 onmouseleave="glowOut(this)">
+                <h6 class="fw-bold">NEW DELHI 🚆 JAMMU TAWI</h6>
+                <h5 class="text-primary fw-bold">NDLS – JAT</h5>
+                <a class="text-primary fw-semibold text-decoration-none" href="/Train/TrainIndex">
+                    Book Now →
+                </a>
             </div>
-            <div class="col-md-3">
-                <h5 class="fw-bold">✔ Seat Availability</h5>
-                <p class="small">Check seats instantly</p>
+        </div>
+
+        <div class="col-md-4">
+            <div class="p-4 rounded border bg-light"
+                 onmouseenter="glowIn(this)"
+                 onmouseleave="glowOut(this)">
+                <h6 class="fw-bold">NEW DELHI 🚆 PATNA JN</h6>
+                <h5 class="text-primary fw-bold">NDLS – PNBE</h5>
+                <a class="text-primary fw-semibold text-decoration-none" href="/Train/TrainIndex">
+                    Book Now →
+                </a>
             </div>
-            <div class="col-md-3">
-                <h5 class="fw-bold">✔ Easy Cancellations</h5>
-                <p class="small">Hassle-free refunds</p>
+        </div>
+
+        <div class="col-md-4">
+            <div class="p-4 rounded border bg-light"
+                 onmouseenter="glowIn(this)"
+                 onmouseleave="glowOut(this)">
+                <h6 class="fw-bold">HOWRAH JN 🚆 JAIPUR</h6>
+                <h5 class="text-primary fw-bold">HWH – JP</h5>
+                <a class="text-primary fw-semibold text-decoration-none" href="/Train/TrainIndex">
+                    Book Now →
+                </a>
             </div>
-            <div class="col-md-3">
-                <h5 class="fw-bold">✔ Secure Payments</h5>
-                <p class="small">100% safe transactions</p>
+        </div>
+
+        <div class="col-md-4">
+            <div class="p-4 rounded border bg-light"
+                 onmouseenter="glowIn(this)"
+                 onmouseleave="glowOut(this)">
+                <h6 class="fw-bold">HYDERABAD 🚆 CHENNAI</h6>
+                <h5 class="text-primary fw-bold">HYB – MAS</h5>
+                <a class="text-primary fw-semibold text-decoration-none" href="/Train/TrainIndex">
+                    Book Now →
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="p-4 rounded border bg-light"
+                 onmouseenter="glowIn(this)"
+                 onmouseleave="glowOut(this)">
+                <h6 class="fw-bold">MUMBAI 🚆 PUNE</h6>
+                <h5 class="text-primary fw-bold">BCT – PUNE</h5>
+                <a class="text-primary fw-semibold text-decoration-none" href="/Train/TrainIndex">
+                    Book Now →
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="p-4 rounded border bg-light"
+                 onmouseenter="glowIn(this)"
+                 onmouseleave="glowOut(this)">
+                <h6 class="fw-bold">PATNA 🚆 GUWAHATI</h6>
+                <h5 class="text-primary fw-bold">PNBE – GHY</h5>
+                <a class="text-primary fw-semibold text-decoration-none" href="/Train/TrainIndex">
+                    Book Now →
+                </a>
             </div>
         </div>
 
     </div>
 </div>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<div class="container my-5">
 
-</body>
+    <div class=" text-center mb-4 ">
+        <h3 class="fw-bold">Why Book With 247Trips?</h3>
+
+    </div>
+
+    <div class="row text-center">
+
+        <!-- Easy Booking -->
+        <div class="col-md-2 p-3"
+             onmouseenter="glowIn(this)"
+             onmouseleave="glowOut(this)">
+            <div class="fs-1 text-primary mb-3"
+                 onmouseenter="iconMove(this)"
+                 onmouseleave="iconBack(this)">
+                📅
+            </div>
+            <h6 class="fw-bold">Easy Booking</h6>
+            <p class="small text-muted">Quick and smooth booking with the best deals.</p>
+        </div>
+
+        <!-- Lowest Price -->
+        <div class="col-md-2 p-3"
+             onmouseenter="glowIn(this)"
+             onmouseleave="glowOut(this)">
+            <div class="fs-1 text-primary mb-3"
+                 onmouseenter="iconMove(this)"
+                 onmouseleave="iconBack(this)">
+                ₹
+            </div>
+            <h6 class="fw-bold">Lowest Price</h6>
+            <p class="small text-muted">We provide the lowest travel prices.</p>
+        </div>
+
+        <!-- Instant Refund -->
+        <div class="col-md-2 p-3"
+             onmouseenter="glowIn(this)"
+             onmouseleave="glowOut(this)">
+            <div class="fs-1 text-primary mb-3"
+                 onmouseenter="iconMove(this)"
+                 onmouseleave="iconBack(this)">
+                🔄
+            </div>
+            <h6 class="fw-bold">Instant Refund</h6>
+            <p class="small text-muted">Fast and easy cancellation refunds.</p>
+        </div>
+
+        <!-- Support -->
+        <div class="col-md-3 p-3"
+             onmouseenter="glowIn(this)"
+             onmouseleave="glowOut(this)">
+            <div class="fs-1 text-primary mb-3"
+                 onmouseenter="iconMove(this)"
+                 onmouseleave="iconBack(this)">
+                🎧
+            </div>
+            <h6 class="fw-bold">24/7 Support</h6>
+            <p class="small text-muted">Our travel experts are always ready.</p>
+        </div>
+
+        <!-- Deals -->
+        <div class="col-md-3 p-3"
+             onmouseenter="glowIn(this)"
+             onmouseleave="glowOut(this)">
+            <div class="fs-1 text-primary mb-3"
+                 onmouseenter="iconMove(this)"
+                 onmouseleave="iconBack(this)">
+                🔥
+            </div>
+            <h6 class="fw-bold">Exciting Deals</h6>
+            <p class="small text-muted">Special discounts across all services.</p>
+        </div>
+
+    </div>
+</div>
+<div class="container my-5">
+    <h2 class="fw-bold text-center mb-4">FAQ's</h2>
+
+    <div class="accordion" id="faqAccordion">
+
+        <!-- FAQ 1 -->
+        <div class="accordion-item shadow-sm mb-3 border-0">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq1"
+                        onmouseenter="faqHover(this)"
+                        onmouseleave="faqOut(this)">
+                    How can I Book Train Tickets Online?
+                </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Tatkal ticket reservation is a facility that allows the passengers taking a train journey on a short notice. Tatkal quota opens one day advance excluding the date of journey from the originating station of the train.
+
+                    Tatkal Train Ticket Booking Timings are:
+
+                    AC Class - 10:00 AM
+
+                    Sleeper Class - 11:00 AM
+
+                    You have to opt for Tatkal quota to book tatkal tickets.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="accordion-item shadow-sm mb-3 border-0">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq2"
+                        onmouseenter="faqHover(this)"
+                        onmouseleave="faqOut(this)">
+                    What is Premium Tatkal?
+                </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Premium Tatkal is a new quota introduced by railway to book online train tickets. Under this quota, dynamic fares are applicable. Premium Tatkal fare increases following the number of bookings. Booking Premium Tatkal (PT) ticket is much costlier than Tatkal because of the dynamic fare pricing. In this case, train ticket prices depend on the booking rates and availability of seats.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="accordion-item shadow-sm mb-3 border-0">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq3"
+                        onmouseenter="faqHover(this)"
+                        onmouseleave="faqOut(this)">
+                    How can I Cancel Tatkal Tickets?
+                </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    On cancellation of confirmed Tatkal tickets, no refund is given. On the cancellation of contingent and waitlisted Tatkal tickets, amount will be charged as per the existing rules of Railway. However, you can partially cancel the Tatkal e-tickets.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="accordion-item shadow-sm mb-3 border-0">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq4"
+                        onmouseenter="faqHover(this)"
+                        onmouseleave="faqOut(this)">
+                    How Many Days in Advance you can Book Train Tickets?
+                </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Advance Reservation Period for booking train tickets is 60 days (excluding the date of journey). So, booking in trains from train originating stations will open and remain available for 60 days.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="accordion-item shadow-sm mb-3 border-0">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq5"
+                        onmouseenter="faqHover(this)"
+                        onmouseleave="faqOut(this)">
+                    When the Chart of a Train is Prepared?
+                </button>
+            </h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    The first chart of a train is typically prepared 4 hours ahead of its departure from originating station or remote location station. Chart of early morning trains is prepared the night before. However, if some seats still remain available, they can be booked by the passengers. So, the final chart is created 30 minutes before departure of train.
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    function faqHover(el) {
+        el.style.background = "#e7f1ff";
+        el.style.color = "#0d6efd";
+        el.style.boxShadow = "0 0 12px rgba(13,110,253,0.4)";
+        el.style.transition = "0.3s";
+    }
+
+    function faqOut(el) {
+        el.style.background = "";
+        el.style.color = "";
+        el.style.boxShadow = "none";
+    }
+</script>
+    </main>
+
+    <footer class="bg-dark text-white mt-5" >
+        <div class="container-fluid px-5 py-5">
+
+            <div class="row">
+
+                <!-- Left Menu -->
+                <div class="col-md-3 border-end border-secondary">
+                    <ul class="list-unstyled fw-semibold">
+                        <li class="py-2 text-primary">OUR OFFERINGS</li>
+                        <li class="py-2">About Us</li>
+                        <li class="py-2">Popular Destinations</li>
+                        <li class="py-2">International Destinations</li>
+                        <li class="py-2">Popular Airlines</li>
+                        <li class="py-2">Connect With Us</li>
+                        <li class="py-2">Offers</li>
+                    </ul>
+                </div>
+
+                <!-- Products -->
+                <div class="col-md-9">
+                    <h5 class="mb-4 fw-bold">Make your travel easy with a wide range of products and services.</h5>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p>
+                            <a class="text-white text-decoration-none" href="/Flight/FlightIndex">Flights</a>
+                            </p>
+                            <p>
+                                <a class="text-white text-decoration-none" href="/Bus/BusIndex">Bus</a>
+                            </p>
+                            <p>Travel Guides</p>
+                            <p>Travel Updates</p>
+                            <p>VIP Cabs <span class="badge bg-danger">NEW</span></p>
+                        </div>
+
+                        <div class="col-md-3">
+                            <p>
+                                <a class="text-white text-decoration-none" href="/Hotel/HotelIndex">Hotels</a>
+                            </p>
+                            <p>Cabs</p>
+                            <p>Check PNR Status</p>
+                            <p>Corporate Travel</p>
+                        </div>
+
+                        <div class="col-md-3">
+                            <p>
+                                <a class="text-white text-decoration-none" href="/Train/TrainIndex">Trains</a>
+                            </p>
+                            <p>Airlines</p>
+                        </div>
+
+                        <div class="col-md-3">
+                            <p>Holidays</p>
+                            <p>Airports</p>
+                            <p>Flight Check-in</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="border-secondary">
+
+            <div class="row align-items-center">
+
+                <!-- Company Info -->
+                <div class="col-md-6">
+                    <h3 class="fw-bold">247Trips</h3>
+                    <p class="small text-secondary">
+                        247Trips offers end-to-end travel solutions including airline tickets, hotel bookings, cab services, bus tickets, railway tickets and holiday packages across India and worldwide.
+                    </p>
+                </div>
+
+            </div>
+
+            <hr class="border-secondary">
+
+            <div class="text-center text-secondary small">
+                © 2026 247Trips.com — All Rights Reserved
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Visual Studio Browser Link -->
+<script type="text/javascript" src="/_vs/browserLink" async="async" id="__browserLink_initializationData" data-requestId="b19f60a17e954eec88e4245812968779" data-requestMappingFromServer="false" data-connectUrl="http://localhost:64979/f53701e45e1d4c45ae06e5cf43efe801/browserLink"></script>
+<!-- End Browser Link -->
+<script src="/_framework/aspnetcore-browser-refresh.js"></script></body>
+
+
 </html>
+<script>
+    // Glow effect on hover
+    function glowIn(el) {
+        el.style.boxShadow = "0 0 25px rgba(13,110,253,0.6)";
+        el.style.transform = "translateY(-8px)";
+        el.style.transition = "0.4s";
+    }
+
+    function glowOut(el) {
+        el.style.boxShadow = "none";
+        el.style.transform = "translateY(0px)";
+    }
+
+    // Icon animation
+    function iconMove(el) {
+        el.style.transform = "scale(1.2) rotate(5deg)";
+    }
+
+    function iconBack(el) {
+        el.style.transform = "scale(1) rotate(0deg)";
+    }
+</script>
