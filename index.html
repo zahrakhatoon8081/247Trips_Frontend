@@ -1,22 +1,144 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>247Trips – Book Flights, Hotels & Holidays</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <title>247Trips &#x2013; Book Flights, Hotels &amp; Holidays - 247Trips</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm sticky-top"
+        >
+
+        <div class="container-fluid px-4">
+
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold text-primary" href="/">
+                247Trips
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                <!-- LEFT MENU -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-3">
+
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="/Flight/FlightIndex">
+                            <i class="bi bi-airplane fs-5 mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Flights</span>
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="/Bus/BusIndex">
+                            <i class="bi bi-bus-front fs-5 mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Bus</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="/Train/TrainIndex">
+                            <i class="bi bi-train-front fs-5 mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Trains</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="/Hotel/HotelIndex">
+                            <i class="bi bi-building fs-5 mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Hotels</span>
+                        </a>
+
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="/Cab/CabIndex">
+                            <i class="bi bi-taxi-front fs-5 mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Cabs</span>
+                        </a>
+
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="/Holiday/HolidayIndex">
+                            <i class="bi bi-sun fs-5 mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Holidays</span>
+                        </a>
+
+                    </li>
+
+                </ul>
+
+                <!-- RIGHT MENU -->
+                <ul class="navbar-nav ms-auto gap-3">
+
+                    <!-- Home -->
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center rounded-3" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="/">
+                            <i class="bi bi-house-door mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Home</span>
+                        </a>
+                    </li>
+
+                        <!-- Login styled like other buttons -->
+                        <li class="nav-item text-center">
+                            <a class="nav-link fw-semibold d-flex flex-column align-items-center rounded-3 px-3" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="/Account/Login">
+                                <i class="bi bi-person-circle mb-0"
+                                   onmouseenter="iconMove(this)"
+                                   onmouseleave="iconBack(this)"></i>
+                                <span class="small">Login/Signup</span>
+                            </a>
+
+                        </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- PAGE CONTENT -->
+    <main class="container-fluid px-0">
+        
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
 
-<body>
 
 <!-- HERO -->
 <div class="bg-dark text-white text-center py-5" style="background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover;">
     <div class="container py-5 bg-dark bg-opacity-50 rounded">
         <h1 class="fw-bold">Travel Smarter with 247Trips</h1>
         <p class="lead">Flights • Hotels • Holiday Packages</p>
-
-        <div class="btn-group mb-3">
+        <div class="btn-group mb-3" role="group">
             <input type="radio" class="btn-check" name="TripType" id="oneWay" checked>
             <label class="btn btn-outline-light btn-sm" for="oneWay">One Way</label>
 
@@ -26,131 +148,992 @@
             <input type="radio" class="btn-check" name="TripType" id="multiCity">
             <label class="btn btn-outline-light btn-sm" for="multiCity">Multicity</label>
         </div>
+        <form method="post" action="/Flight/Search">
 
-        <!-- SEARCH BAR -->
-        <div class="card shadow">
-            <div class="card-body p-0">
-                <div class="row g-0">
+            <div class="card shadow overflow-hidden"
+                 style="transition: transform .35s ease;"
+                 onmouseover="this.style.transform='scale(1.02)'"
+                 onmouseout="this.style.transform='scale(1)'">
 
-                    <div class="col-md-2 p-3 border-end">
-                        <small>FROM</small>
-                        <input type="text" class="form-control border-0 fw-bold" placeholder="Delhi">
+                <div class="card-body p-0">
+                    <div class="row g-0 align-items-stretch">
+
+                        <input type="hidden" id="FromCode" name="FromCode" />
+                        <input type="hidden" id="ToCode" name="ToCode" />
+
+                        <!-- FROM -->
+                        <div class="col-md-2 border-end p-3 position-relative">
+                            <small class="text-muted fw-semibold">FROM</small>
+                            <input type="text" class="form-control border-0 p-0 fw-bold"
+                                   id="fromCity" name="FromCity"
+                                   placeholder="Search City" autocomplete="off" required />
+                            <div id="fromDropdown"
+                                 class="position-absolute bg-white shadow rounded w-100 d-none z-3"
+                                 style="top:100%;"></div>
+                        </div>
+
+                        <!-- TO -->
+                        <div class="col-md-2 border-end p-3 position-relative">
+                            <small class="text-muted fw-semibold">TO</small>
+                            <input type="text" class="form-control border-0 p-0 fw-bold"
+                                   id="toCity" name="ToCity"
+                                   placeholder="Search City" autocomplete="off" required />
+                            <div id="toDropdown"
+                                 class="position-absolute bg-white shadow rounded w-100 d-none z-3"
+                                 style="top:100%;"></div>
+                        </div>
+
+                        <!-- DEPART -->
+                        <div class="col-md-2 border-end p-3">
+                            <small class="text-muted fw-semibold">DEPARTURE</small>
+                            <input type="date" class="form-control border-0 p-0 fw-bold"
+                                   name="DepartureDate" required />
+                        </div>
+
+                        <!-- RETURN -->
+                        <div class="col-md-2 border-end p-3">
+                            <small class="text-muted fw-semibold">RETURN</small>
+                            <input type="date" class="form-control border-0 p-0 fw-bold"
+                                   name="ReturnDate" id="returnDate" disabled />
+                        </div>
+
+                        <!-- TRAVELLER -->
+                        <div class="col-md-2 border-end p-3 position-relative" id="travellerBox">
+                            <small class="text-muted fw-semibold">TRAVELLER & CLASS</small>
+                            <div class="fw-bold" id="travellerSummary">1 Traveller</div>
+                            <small class="text-muted" id="selectedClass">Economy</small>
+
+                            <div id="travellerDropdown"
+                                 class="position-absolute bg-white shadow rounded p-3 d-none z-3 w-100"
+                                 style="top:100%;">
+                                <!-- Traveller UI unchanged -->
+                            </div>
+                        </div>
+
+                        <!-- SEARCH -->
+                        <div class="col-md-2 d-flex">
+                            <button type="submit" class="btn btn-warning fw-bold fs-4 w-100 rounded-0">
+                                SEARCH
+                            </button>
+                        </div>
+
                     </div>
-
-                    <div class="col-md-2 p-3 border-end">
-                        <small>TO</small>
-                        <input type="text" class="form-control border-0 fw-bold" placeholder="Mumbai">
-                    </div>
-
-                    <div class="col-md-2 p-3 border-end">
-                        <small>DEPART</small>
-                        <input type="date" class="form-control border-0 fw-bold">
-                    </div>
-
-                    <div class="col-md-2 p-3 border-end">
-                        <small>RETURN</small>
-                        <input type="date" class="form-control border-0 fw-bold" id="returnDate" disabled>
-                    </div>
-
-                    <div class="col-md-2 p-3 border-end">
-                        <small>TRAVELLER</small>
-                        <div class="fw-bold">1 Traveller</div>
-                    </div>
-
-                    <div class="col-md-2">
-                        <button class="btn btn-warning w-100 h-100 fw-bold fs-4">SEARCH</button>
-                    </div>
-
                 </div>
             </div>
+
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8GqfEezGEtNHt7o4QPkF0hdP1r_s-YY6g2Wa1UHbFnH9pIzBF25jJC_lAsv64MU-vw0B3jrdiEQwckEcyiskreoKeWE_FTDCnmme_-MBe8R24yUIRvg_6F9k1E0unZ-2zTWskw9d3lO3gvEKRJOo0ro" /></form>
+
+    </div>
+</div>
+<div class="container my-4 mt-lg-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow text-center p-4">
+                <h5 class="fw-bold">Flight Cancellation Policy</h5>
+                <p class="text-muted">Tap to view full policy details</p>
+
+                <button class="btn btn-primary fw-bold" onclick="openPolicy()">
+                    View Policy
+                </button>
+            </div>
+
         </div>
     </div>
 </div>
+<div id="policyOverlay"
+     class="position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-75 d-none d-flex align-items-center justify-content-center"
+     style="z-index:1055;">
+
+    <div class="bg-white rounded shadow-lg p-4" style="max-width:600px; width:95%;">
+
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="fw-bold text-primary mb-0">✈ 247Trips – Cancellation Policy</h5>
+            <button class="btn-close" onclick="closePolicy()"></button>
+        </div>
+
+        <p class="text-muted">
+            Manage your flight cancellations easily and understand refund rules.
+        </p>
+
+        <hr>
+
+        <div class="mb-3">
+            <h6 class="fw-bold">Free Cancellation</h6>
+            <p class="text-muted small">
+                Cancel within 24 hours of booking to get a full refund if departure is at least 7 days away.
+            </p>
+        </div>
+
+        <div class="mb-3">
+            <h6 class="fw-bold">After 24 Hours</h6>
+            <p class="text-muted small">
+                Airline cancellation charges and service fees may apply.
+            </p>
+        </div>
+
+        <div class="mb-3">
+            <h6 class="fw-bold">Refund Processing</h6>
+            <p class="text-muted small">
+                Refunds are credited back within 7–10 working days.
+            </p>
+        </div>
+
+        <div class="alert alert-warning small">
+            Refund rules vary by airline and fare type. Check before booking.
+        </div>
+
+        <div class="text-end">
+            <button class="btn btn-secondary" onclick="closePolicy()">Close</button>
+        </div>
+
+    </div>
+</div>
+
+
 
 <!-- DESTINATIONS -->
 <div class="container my-5">
-<h3 class="text-center mb-4">Popular Destinations</h3>
-<div class="row g-4">
+    <h3 class="text-center mb-4">Popular Destinations</h3>
+    <div class="row g-4">
 
-<div class="col-md-3">
-<div class="card shadow">
-<img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da" class="card-img-top">
-<div class="card-body text-center">
-<h6>Agra</h6>
-<p>From ₹7,999</p>
-</div>
-</div>
-</div>
+        <div class="col-md-3">
+            <div class="card shadow overflow-hidden">
+                <div style="overflow:hidden;">
+                    <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da"
+                         class="card-img-top"
+                         style="transition: transform .4s ease;"
+                         onmouseover="this.style.transform='scale(1.08)'"
+                         onmouseout="this.style.transform='scale(1)'">
+                </div>
 
-<div class="col-md-3">
-<div class="card shadow">
-<img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad" class="card-img-top">
-<div class="card-body text-center">
-<h6>Mumbai</h6>
-<p>From ₹12,999</p>
-</div>
-</div>
-</div>
+                <div class="card-body py-0 text-center">
+                    <h6 class="card-title mb-1">Agra</h6>
+                    <p class="card-text small mb-2">From ₹7,999</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm mb-2">View Deals</a>
+                </div>
+            </div>
+        </div>
 
-<div class="col-md-3">
-<div class="card shadow">
-<img src="https://images.unsplash.com/photo-1536421469767-80559bb6f5e1" class="card-img-top">
-<div class="card-body text-center">
-<h6>Kolkata</h6>
-<p>From ₹13,999</p>
-</div>
-</div>
-</div>
+        <div class="col-md-3">
 
-<div class="col-md-3">
-<div class="card shadow">
-<img src="https://images.unsplash.com/photo-1712422813106-dfb845a8a7ed" class="card-img-top">
-<div class="card-body text-center">
-<h6>Hyderabad</h6>
-<p>From ₹13,999</p>
-</div>
-</div>
-</div>
+            <div class="card shadow overflow-hidden">
+                <div style="overflow:hidden;">
+                    <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad"
+                         class="card-img-top"
+                         style="transition: transform .4s ease;"
+                         onmouseover="this.style.transform='scale(1.08)'"
+                         onmouseout="this.style.transform='scale(1)'">
+                </div>
 
-</div>
-</div>
+                <div class="card-body py-0 text-center">
+                    <h6 class="card-title mb-1">Mumbai</h6>
+                    <p class="card-text small mb-2">From ₹12,999</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm mb-2">View Deals</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow overflow-hidden">
+                <div style="overflow:hidden;">
+                    <img src="https://images.unsplash.com/photo-1536421469767-80559bb6f5e1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8a29sa2F0YXxlbnwwfHwwfHx8MA%3D%3D"
+                         class="card-img-top"
+                         style="transition: transform .4s ease;"
+                         onmouseover="this.style.transform='scale(1.08)'"
+                         onmouseout="this.style.transform='scale(1)'">
+                </div>
 
-<!-- FAQ -->
+                <div class="card-body py-0 text-center">
+                    <h6 class="card-title mb-1">Kolkata</h6>
+                    <p class="card-text small mb-2">From ₹13,999</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm mb-2">View Deals</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow overflow-hidden">
+                <div style="overflow:hidden;">
+                    <img src="https://images.unsplash.com/photo-1712422813106-dfb845a8a7ed?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHlkZXJhYmFkJTIwY2l0eXxlbnwwfHwwfHx8MA%3D%3D"
+                         class="card-img-top"
+                         style="transition: transform .4s ease;"
+                         onmouseover="this.style.transform='scale(1.08)'"
+                         onmouseout="this.style.transform='scale(1)'">
+                </div>
+
+                <div class="card-body py-0 text-center">
+                    <h6 class="card-title mb-1">Hyderabad</h6>
+                    <p class="card-text small mb-2">From ₹13,999</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm mb-2">View Deals</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
 <div class="container my-5">
-<h3 class="text-center mb-4">FAQ</h3>
-<div class="accordion">
 
-<div class="accordion-item">
-<h2 class="accordion-header">
-<button class="accordion-button">How do I find cheap flights?</button>
-</h2>
-<div class="accordion-body">
-247Trips compares all airlines in real time to find the cheapest price.
-</div>
+    <!-- Heading -->
+    <div class="mb-4">
+        <h3 class="fw-bold">Exclusive Travel Deals</h3>
+        <p class="text-muted">Grab the best offers on flights, hotels & holiday packages</p>
+    </div>
+
+    <!-- Offer Tabs -->
+    <div class="mb-3 fw-semibold">
+        <span class="me-3">All</span>
+        <span class="me-3 text-muted">Flights</span>
+        <span class="me-3 text-muted">Hotels</span>
+        <span class="me-3 text-muted">Holidays</span>
+        <span class="me-3 text-muted">Buses</span>
+    </div>
+
+    <!-- Offer Cards -->
+    <div class="row g-4">
+
+        <!-- Offer 1 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 p-4 h-100">
+                <h5 class="fw-bold">Up to ₹15,000 OFF</h5>
+                <p class="text-muted">On Credit Card</p>
+                <span class="badge bg-danger bg-opacity-10 text-danger px-3 py-2">
+                    TRIPFEST
+                </span>
+            </div>
+        </div>
+
+        <!-- Offer 2 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 p-4 h-100">
+                <h5 class="fw-bold">Up to ₹18,000 OFF</h5>
+                <p class="text-muted">On Credit Card EMI Payments</p>
+                <span class="badge bg-danger bg-opacity-10 text-danger px-3 py-2">
+                    PAYEMI
+                </span>
+            </div>
+        </div>
+
+        <!-- Offer 3 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 p-4 h-100">
+                <h5 class="fw-bold">Up to ₹3,000 OFF</h5>
+                <p class="text-muted">On Select UPI Payment</p>
+                <span class="badge bg-danger bg-opacity-10 text-danger px-3 py-2">
+                    Pay now
+                </span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- View All -->
+    <div class="mt-4">
+        <a href="#" class="fw-semibold text-decoration-none text-primary">
+            View all deals →
+        </a>
+    </div>
+
 </div>
 
-<div class="accordion-item">
-<h2 class="accordion-header">
-<button class="accordion-button collapsed">What is the best day to book?</button>
-</h2>
-<div class="accordion-body">
-Sundays and early bookings usually get cheaper fares.
+<!-- OFFERS -->
+<div class="container my-5">
+    <h3 class="text-center mb-4">Special Offers</h3>
+    <div class="row g-4">
+
+        <div class="col-md-3">
+            <div class="card shadow overflow-hidden">
+                <div style="overflow:hidden;">
+                    <img src="https://images.unsplash.com/photo-1625505826533-5c80aca7d157?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fEdvYXxlbnwwfHwwfHx8MA%3D%3D"
+                         class="card-img-top"
+                         style="transition: transform .4s ease;"
+                         onmouseover="this.style.transform='scale(1.08)'"
+                         onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="card-body py-0 text-center">
+                    <h6 class="card-title mb-1">Goa Holiday</h6>
+                    <p class="mb-0">3 Nights + Flights</p>
+                    <span class="badge bg-danger mb-1">30% OFF</span>
+                    <div class="mb-2">
+                        <a href="#" class="btn btn-primary w-100">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow overflow-hidden">
+                <div style="overflow:hidden;">
+                    <img src="https://images.unsplash.com/photo-1656833111546-07d98abab448?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1hbmFsaXxlbnwwfHwwfHx8MA%3D%3D"
+                         class="card-img-top"
+                         style="transition: transform .4s ease;"
+                         onmouseover="this.style.transform='scale(1.08)'"
+                         onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="card-body py-0 text-center">
+                    <h6 class="card-title mb-1">Manali Tour</h6>
+                    <p class="mb-0">5 Days Package</p>
+                    <span class="badge bg-success mb-1">₹10,000 OFF</span>
+                    <div class="mb-2">
+                        <a href="#" class="btn btn-primary w-100">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow overflow-hidden">
+                <div style="overflow:hidden;">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2h8ZW58MHx8MHx8fDA%3D"
+                         class="card-img-top"
+                         style="transition: transform .4s ease;"
+                         onmouseover="this.style.transform='scale(1.08)'"
+                         onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="card-body py-0 text-center">
+                    <h6 class="card-title mb-1">Beach Resorts</h6>
+                    <p class="mb-0">Luxury Stays</p>
+                    <span class="badge bg-warning mb-1">20% OFF</span>
+                    <div class="mb-2">
+                        <a href="#" class="btn btn-primary w-100">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow overflow-hidden">
+                <div style="overflow:hidden;">
+                    <img src="https://plus.unsplash.com/premium_photo-1697729733902-f8c92710db07?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c2hpbWxhfGVufDB8fDB8fHww"
+                         class="card-img-top"
+                         style="transition: transform .4s ease;"
+                         onmouseover="this.style.transform='scale(1.08)'"
+                         onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="card-body py-0 text-center">
+                    <h6 class="card-title mb-1">Shimla</h6>
+                    <p class="mb-0">5 Days Package</p>
+                    <span class="badge bg-warning mb-1">30% OFF</span>
+                    <div class="mb-2">
+                        <a href="#" class="btn btn-primary w-100">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
 </div>
+<div class="container my-5">
+
+    <!-- Section Heading -->
+    <div class="mb-4">
+        <h3 class="fw-bold">More Ways to Travel with 247Trips</h3>
+        <p class="text-muted">Explore exclusive travel experiences beyond flights & hotels</p>
+    </div>
+
+    <div class="row g-4">
+
+        <!-- Card 1 -->
+        <div class="col-md-3">
+            <div class="position-relative shadow rounded-4 overflow-hidden"
+                 onmouseenter="zoomOut(this)"
+                 onmouseleave="zoomIn(this)"
+                 style="cursor:pointer; transition:0.4s;">
+
+                <img src="https://images.unsplash.com/photo-1618083707368-b3823daa2726?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGFkdmVudHVyZXxlbnwwfHwwfHx8MA%3D%3D"
+                     class="img-fluid w-100"
+                     style="transition:0.4s;"
+                     alt="Adventure">
+
+                <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white"
+                     style="background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                    <h5 class="fw-bold mb-0">Adventure Trips</h5>
+                </div>
+
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-md-3">
+            <div class="position-relative shadow rounded-4 overflow-hidden"
+                 onmouseenter="zoomOut(this)"
+                 onmouseleave="zoomIn(this)"
+                 style="cursor:pointer; transition:0.4s;">
+
+                <img src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1lZXRpbmd8ZW58MHx8MHx8fDA%3D"
+                     class="img-fluid w-100"
+                     style="transition:0.4s;"
+                     alt="MICE">
+
+                <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white"
+                     style="background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                    <h5 class="fw-bold mb-0">MICE & Corporate Travel</h5>
+                </div>
+
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-md-3">
+            <div class="position-relative shadow rounded-4 overflow-hidden"
+                 onmouseenter="zoomOut(this)"
+                 onmouseleave="zoomIn(this)"
+                 style="cursor:pointer; transition:0.4s;">
+
+                <img src="https://images.unsplash.com/photo-1511316695145-4992006ffddb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Q3J1aXNlfGVufDB8fDB8fHww"
+                     class="img-fluid w-100"
+                     style="transition:0.4s;"
+                     alt="Cruise">
+
+                <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white"
+                     style="background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                    <h5 class="fw-bold mb-0">Cruise Vacations</h5>
+                </div>
+
+            </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="col-md-3">
+            <div class="position-relative shadow rounded-4 overflow-hidden"
+                 onmouseenter="zoomOut(this)"
+                 onmouseleave="zoomIn(this)"
+                 style="cursor:pointer; transition:0.4s;">
+
+                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8VmlsbGFzfGVufDB8fDB8fHww"
+                     class="img-fluid w-100"
+                     style="transition:0.4s;"
+                     alt="Villas">
+
+                <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white"
+                     style="background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                    <h5 class="fw-bold mb-0">Villas & Premium Stays</h5>
+                </div>
+
+            </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="col-md-3">
+            <div class="position-relative shadow rounded-4 overflow-hidden"
+                 onmouseenter="zoomOut(this)"
+                 onmouseleave="zoomIn(this)"
+                 style="cursor:pointer; transition:0.4s;">
+
+                <img src="https://images.unsplash.com/photo-1670605106623-c7db3dd59147?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8UGFsYWNlJTIwb24lMjBXaGVlbHMlMjB0cmFpbnxlbnwwfHwwfHx8MA%3D%3D"
+                     class="img-fluid w-100"
+                     style="transition:0.4s;"
+                     alt="Train">
+
+                <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white"
+                     style="background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                    <h5 class="fw-bold mb-0">Luxury Train Journeys</h5>
+                </div>
+
+            </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="col-md-3">
+            <div class="position-relative shadow rounded-4 overflow-hidden"
+                 onmouseenter="zoomOut(this)"
+                 onmouseleave="zoomIn(this)"
+                 style="cursor:pointer; transition:0.4s;">
+
+                <img src="https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8SW5zdXJhbmNlfGVufDB8fDB8fHww"
+                     class="img-fluid w-100"
+                     style="transition:0.4s;"
+                     alt="Travel Insurance">
+
+                <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white"
+                     style="background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                    <h5 class="fw-bold mb-1">Travel Protection</h5>
+                    <small>Insurance, cancellations & medical cover</small>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="container my-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+        <h3 class="fw-bold">Why Book With 247Trips?</h3>
+
+        <div class="border rounded-pill px-4 py-2 small">
+            <span class="text-success fw-bold">Great</span>
+            <span style="color:#ffb400;">★★★★★</span>
+            <span class="ms-2">15,000+ reviews on</span>
+            <span class="fw-bold text-success"> Trustpilot</span>
+        </div>
+    </div>
+
+    <div class="row text-center">
+
+        <!-- Easy Booking -->
+        <div class="col-md-2 p-3"
+             onmouseenter="glowIn(this)"
+             onmouseleave="glowOut(this)">
+            <div class="fs-1 text-primary mb-3"
+                 onmouseenter="iconMove(this)"
+                 onmouseleave="iconBack(this)">
+                📅
+            </div>
+            <h6 class="fw-bold">Easy Booking</h6>
+            <p class="small text-muted">Quick and smooth booking with the best deals.</p>
+        </div>
+
+        <!-- Lowest Price -->
+        <div class="col-md-2 p-3"
+             onmouseenter="glowIn(this)"
+             onmouseleave="glowOut(this)">
+            <div class="fs-1 text-primary mb-3"
+                 onmouseenter="iconMove(this)"
+                 onmouseleave="iconBack(this)">
+                ₹
+            </div>
+            <h6 class="fw-bold">Lowest Price</h6>
+            <p class="small text-muted">We provide the lowest travel prices.</p>
+        </div>
+
+        <!-- Instant Refund -->
+        <div class="col-md-2 p-3"
+             onmouseenter="glowIn(this)"
+             onmouseleave="glowOut(this)">
+            <div class="fs-1 text-primary mb-3"
+                 onmouseenter="iconMove(this)"
+                 onmouseleave="iconBack(this)">
+                🔄
+            </div>
+            <h6 class="fw-bold">Instant Refund</h6>
+            <p class="small text-muted">Fast and easy cancellation refunds.</p>
+        </div>
+
+        <!-- Support -->
+        <div class="col-md-3 p-3"
+             onmouseenter="glowIn(this)"
+             onmouseleave="glowOut(this)">
+            <div class="fs-1 text-primary mb-3"
+                 onmouseenter="iconMove(this)"
+                 onmouseleave="iconBack(this)">
+                🎧
+            </div>
+            <h6 class="fw-bold">24/7 Support</h6>
+            <p class="small text-muted">Our travel experts are always ready.</p>
+        </div>
+
+        <!-- Deals -->
+        <div class="col-md-3 p-3"
+             onmouseenter="glowIn(this)"
+             onmouseleave="glowOut(this)">
+            <div class="fs-1 text-primary mb-3"
+                 onmouseenter="iconMove(this)"
+                 onmouseleave="iconBack(this)">
+                🔥
+            </div>
+            <h6 class="fw-bold">Exciting Deals</h6>
+            <p class="small text-muted">Special discounts across all services.</p>
+        </div>
+
+    </div>
+</div>
+<div class="container my-5">
+    <h2 class="fw-bold text-center mb-4">FAQ's</h2>
+
+    <div class="accordion" id="faqAccordion">
+
+        <!-- FAQ 1 -->
+        <div class="accordion-item shadow-sm mb-3 border-0">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq1"
+                        onmouseenter="faqHover(this)"
+                        onmouseleave="faqOut(this)">
+                    How do I find the cheapest airfare?
+                </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Enter your departure and destination cities on 247Trips and use our fare calendar to find the lowest prices. We compare airlines in real-time so you always get the cheapest available fare.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="accordion-item shadow-sm mb-3 border-0">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq2"
+                        onmouseenter="faqHover(this)"
+                        onmouseleave="faqOut(this)">
+                    What is the best day to book cheap flights?
+                </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Based on airline trends, booking on Sundays and at least 2–3 weeks before travel usually gives the best fares. Prices fluctuate, so checking frequently on 247Trips helps you save more.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="accordion-item shadow-sm mb-3 border-0">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq3"
+                        onmouseenter="faqHover(this)"
+                        onmouseleave="faqOut(this)">
+                    Is it cheaper to book flights at the last minute?
+                </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Sometimes airlines drop prices close to departure, but this is not guaranteed. Booking early on 247Trips ensures better seat availability and stable pricing.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="accordion-item shadow-sm mb-3 border-0">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq4"
+                        onmouseenter="faqHover(this)"
+                        onmouseleave="faqOut(this)">
+                    How can I get free flights?
+                </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    You can earn free flights through loyalty points, credit card reward miles and exclusive 247Trips promotional offers.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="accordion-item shadow-sm mb-3 border-0">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq5"
+                        onmouseenter="faqHover(this)"
+                        onmouseleave="faqOut(this)">
+                    How do I book a flight online on 247Trips?
+                </button>
+            </h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Simply enter your cities, travel date and number of passengers. Choose the best deal and complete payment securely — your ticket will be emailed instantly.
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
-</div>
-</div>
+
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-document.getElementById("roundTrip").addEventListener("change",()=>{
-    document.getElementById("returnDate").disabled=false;
-});
-document.getElementById("oneWay").addEventListener("change",()=>{
-    document.getElementById("returnDate").disabled=true;
-});
-</script>
+    function setupCityDropdown(inputId, dropdownId) {
 
-</body>
+        const input = document.getElementById(inputId);
+        const dropdown = document.getElementById(dropdownId);
+
+        input.addEventListener("focus", () => fetchCities(""));
+        input.addEventListener("keyup", () => fetchCities(input.value));
+
+        function fetchCities(search) {
+            fetch(`/Flight/GetCities?term=${search}`)
+                .then(res => res.json())
+                .then(data => {
+                    dropdown.innerHTML = "";
+                    dropdown.classList.remove("d-none");
+
+                    data.forEach(city => {
+
+                        const item = document.createElement("div");
+                        item.className = "p-3 border-bottom";
+
+                        item.innerHTML = `
+                            <strong>${city.name} (${city.code})</strong><br/>
+                            <small class="text-muted">${city.airport}</small>
+                            <span class="float-end text-muted">${city.country}</span>
+                        `;
+
+                            item.addEventListener("click", () => {
+        input.value = `${city.name} (${city.code})`;
+
+        if (inputId === "fromCity") {
+            document.getElementById("FromCode").value = city.code;
+        } else {
+            document.getElementById("ToCode").value = city.code;
+        }
+
+        dropdown.classList.add("d-none");
+    });
+
+
+                        dropdown.appendChild(item);
+                    });
+                });
+        }
+
+        document.addEventListener("click", function (e) {
+            if (!input.contains(e.target) && !dropdown.contains(e.target)) {
+                dropdown.classList.add("d-none");
+            }
+        });
+    }
+
+    setupCityDropdown("fromCity", "fromDropdown");
+    setupCityDropdown("toCity", "toDropdown");
+</script>
+<script>
+    const oneWay = document.getElementById("oneWay");
+    const roundTrip = document.getElementById("roundTrip");
+    const returnDate = document.getElementById("returnDate");
+
+    oneWay.addEventListener("change", () => {
+        returnDate.disabled = true;
+        returnDate.value = "";
+    });
+
+    roundTrip.addEventListener("change", () => {
+        returnDate.disabled = false;
+        returnDate.required = true;
+    });
+</script>
+<script>
+    document.getElementById("departureDate").addEventListener("change", function () {
+        document.getElementById("returnDate").min = this.value;
+    });
+</script>
+<script>
+    let counts = { adult: 1, child: 0, infant: 0 };
+
+    const travellerBox = document.getElementById("travellerBox");
+    const dropdown = document.getElementById("travellerDropdown");
+
+    // OPEN / CLOSE DROPDOWN
+    travellerBox.addEventListener("click", function (e) {
+        e.stopPropagation();
+        dropdown.classList.toggle("d-none");
+    });
+
+    // PREVENT CLOSE WHEN CLICKING INSIDE
+    dropdown.addEventListener("click", function (e) {
+        e.stopPropagation();
+    });
+
+    // CLOSE ON OUTSIDE CLICK
+    document.addEventListener("click", function () {
+        dropdown.classList.add("d-none");
+    });
+
+    function changeCount(type, value) {
+        const total = counts.adult + counts.child + counts.infant;
+
+        if (type === "adult" && counts.adult + value < 1) return;
+        if (counts[type] + value < 0) return;
+        if (total + value > 9) return;
+
+        counts[type] += value;
+        document.getElementById(type + "Count").innerText = counts[type];
+    }
+
+    function applyTravellers() {
+        const total = counts.adult + counts.child + counts.infant;
+        const selectedClass =
+            document.querySelector('input[name="travelClass"]:checked').value;
+
+        document.getElementById("travellerSummary").innerText =
+            `${total} Traveller${total > 1 ? "s" : ""}`;
+
+        document.getElementById("selectedClass").innerText = selectedClass;
+
+        dropdown.classList.add("d-none");
+    }
+</script>
+<script>
+    function openPolicy() {
+        document.getElementById("policyOverlay").classList.remove("d-none");
+    }
+
+    function closePolicy() {
+        document.getElementById("policyOverlay").classList.add("d-none");
+    }
+</script>
+<script>
+    function zoomOut(card) {
+        card.style.transform = "translateY(-6px)";
+        card.style.boxShadow = "0 20px 40px rgba(0,0,0,0.2)";
+        card.querySelector("img").style.transform = "scale(0.92)";
+    }
+
+    function zoomIn(card) {
+        card.style.transform = "translateY(0)";
+        card.style.boxShadow = "";
+        card.querySelector("img").style.transform = "scale(1)";
+    }
+</script>
+<script>
+    // Glow effect on hover
+    function glowIn(el) {
+        el.style.boxShadow = "0 0 25px rgba(13,110,253,0.6)";
+        el.style.transform = "translateY(-8px)";
+        el.style.transition = "0.4s";
+    }
+
+    function glowOut(el) {
+        el.style.boxShadow = "none";
+        el.style.transform = "translateY(0px)";
+    }
+
+    // Icon animation
+    function iconMove(el) {
+        el.style.transform = "scale(1.2) rotate(5deg)";
+    }
+
+    function iconBack(el) {
+        el.style.transform = "scale(1) rotate(0deg)";
+    }
+</script>
+<script>
+    function faqHover(el) {
+        el.style.background = "#e7f1ff";
+        el.style.color = "#0d6efd";
+        el.style.boxShadow = "0 0 12px rgba(13,110,253,0.4)";
+        el.style.transition = "0.3s";
+    }
+
+    function faqOut(el) {
+        el.style.background = "";
+        el.style.color = "";
+        el.style.boxShadow = "none";
+    }
+</script>
+    </main>
+
+    <footer class="bg-dark text-white mt-5" >
+        <div class="container-fluid px-5 py-5">
+
+            <div class="row">
+
+                <!-- Left Menu -->
+                <div class="col-md-3 border-end border-secondary">
+                    <ul class="list-unstyled fw-semibold">
+                        <li class="py-2 text-primary">OUR OFFERINGS</li>
+                        <li class="py-2">About Us</li>
+                        <li class="py-2">Popular Destinations</li>
+                        <li class="py-2">International Destinations</li>
+                        <li class="py-2">Popular Airlines</li>
+                        <li class="py-2">Connect With Us</li>
+                        <li class="py-2">Offers</li>
+                    </ul>
+                </div>
+
+                <!-- Products -->
+                <div class="col-md-9">
+                    <h5 class="mb-4 fw-bold">Make your travel easy with a wide range of products and services.</h5>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p>
+                            <a class="text-white text-decoration-none" href="/Flight/FlightIndex">Flights</a>
+                            </p>
+                            <p>
+                                <a class="text-white text-decoration-none" href="/Bus/BusIndex">Bus</a>
+                            </p>
+                            <p>Travel Guides</p>
+                            <p>Travel Updates</p>
+                            <p>VIP Cabs <span class="badge bg-danger">NEW</span></p>
+                        </div>
+
+                        <div class="col-md-3">
+                            <p>
+                                <a class="text-white text-decoration-none" href="/Hotel/HotelIndex">Hotels</a>
+                            </p>
+                            <p>Cabs</p>
+                            <p>Check PNR Status</p>
+                            <p>Corporate Travel</p>
+                        </div>
+
+                        <div class="col-md-3">
+                            <p>
+                                <a class="text-white text-decoration-none" href="/Train/TrainIndex">Trains</a>
+                            </p>
+                            <p>Airlines</p>
+                        </div>
+
+                        <div class="col-md-3">
+                            <p>Holidays</p>
+                            <p>Airports</p>
+                            <p>Flight Check-in</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="border-secondary">
+
+            <div class="row align-items-center">
+
+                <!-- Company Info -->
+                <div class="col-md-6">
+                    <h3 class="fw-bold">247Trips</h3>
+                    <p class="small text-secondary">
+                        247Trips offers end-to-end travel solutions including airline tickets, hotel bookings, cab services, bus tickets, railway tickets and holiday packages across India and worldwide.
+                    </p>
+                </div>
+
+            </div>
+
+            <hr class="border-secondary">
+
+            <div class="text-center text-secondary small">
+                © 2026 247Trips.com — All Rights Reserved
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Visual Studio Browser Link -->
+<script type="text/javascript" src="/_vs/browserLink" async="async" id="__browserLink_initializationData" data-requestId="fc2d4720e67f47b6ae7416ddb01d3e88" data-requestMappingFromServer="false" data-connectUrl="http://localhost:64979/f53701e45e1d4c45ae06e5cf43efe801/browserLink"></script>
+<!-- End Browser Link -->
+<script src="/_framework/aspnetcore-browser-refresh.js"></script></body>
+
+
 </html>
+<script>
+    // Glow effect on hover
+    function glowIn(el) {
+        el.style.boxShadow = "0 0 25px rgba(13,110,253,0.6)";
+        el.style.transform = "translateY(-8px)";
+        el.style.transition = "0.4s";
+    }
+
+    function glowOut(el) {
+        el.style.boxShadow = "none";
+        el.style.transform = "translateY(0px)";
+    }
+
+    // Icon animation
+    function iconMove(el) {
+        el.style.transform = "scale(1.2) rotate(5deg)";
+    }
+
+    function iconBack(el) {
+        el.style.transform = "scale(1) rotate(0deg)";
+    }
+</script>
