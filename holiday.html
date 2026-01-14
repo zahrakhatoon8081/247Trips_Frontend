@@ -1,0 +1,423 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Holiday Packages - 247Trips</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm sticky-top"
+        >
+
+        <div class="container-fluid px-4">
+
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold text-primary" href="/">
+                247Trips
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                <!-- LEFT MENU -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-3">
+
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="flight.html">
+                            <i class="bi bi-airplane fs-5 mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Flights</span>
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="bus.html">
+                            <i class="bi bi-bus-front fs-5 mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Bus</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="train.html">
+                            <i class="bi bi-train-front fs-5 mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Trains</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="hotel.html">
+                            <i class="bi bi-building fs-5 mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Hotels</span>
+                        </a>
+
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="cab.html">
+                            <i class="bi bi-taxi-front fs-5 mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Cabs</span>
+                        </a>
+
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="holiday.html">
+                            <i class="bi bi-sun fs-5 mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Holidays</span>
+                        </a>
+
+                    </li>
+
+                </ul>
+
+                <!-- RIGHT MENU -->
+                <ul class="navbar-nav ms-auto gap-3">
+
+                    <!-- Home -->
+                    <li class="nav-item text-center">
+                        <a class="nav-link fw-semibold d-flex flex-column align-items-center rounded-3" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="/">
+                            <i class="bi bi-house-door mb-0"
+                               onmouseenter="iconMove(this)"
+                               onmouseleave="iconBack(this)"></i>
+                            <span class="small">Home</span>
+                        </a>
+                    </li>
+
+                        <!-- Login styled like other buttons -->
+                        <li class="nav-item text-center">
+                            <a class="nav-link fw-semibold d-flex flex-column align-items-center rounded-3 px-3" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="login.html">
+                                <i class="bi bi-person-circle mb-0"
+                                   onmouseenter="iconMove(this)"
+                                   onmouseleave="iconBack(this)"></i>
+                                <span class="small">Login/Signup</span>
+                            </a>
+
+                        </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- PAGE CONTENT -->
+    <main class="container-fluid px-0">
+        
+<!-- HERO / SEARCH -->
+<div class="container-fluid py-5 text-white"
+     style="background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center/cover; min-height:480px;">
+
+    <div class="container py-5 bg-dark bg-opacity-50 rounded">
+
+        <div class="container">
+
+            <!-- MAIN TITLE -->
+            <div class="text-center mb-4">
+                <h1 class="fw-bold">Explore Best Holiday Packages</h1>
+                <p class="lead">Handpicked trips • Flights + Hotels • Hassle-free planning</p>
+            </div>
+
+            <!-- SEARCH FORM -->
+            <div class="bg-white rounded shadow-lg p-4">
+
+                <div class="row g-3 align-items-center">
+
+                    <div class="col-md-3">
+                        <label class="fw-semibold">Destination</label>
+                        <input class="form-control" placeholder="Enter destination">
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="fw-semibold">Start Date</label>
+                        <input class="form-control" type="date">
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="fw-semibold">Nights</label>
+                        <select class="form-select">
+                            <option>3 Nights</option>
+                            <option>5 Nights</option>
+                            <option>7 Nights</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="fw-semibold">Travel Type</label>
+                        <select class="form-select">
+                            <option>All</option>
+                            <option>Beach</option>
+                            <option>Honeymoon</option>
+                            <option>Family</option>
+                            <option>Adventure</option>
+                            <option>Luxury</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2 d-grid">
+                        <button class="btn btn-warning fw-bold fs-5">Search</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- TOP PACKAGES -->
+
+<!-- CUSTOMIZE ITINERARY -->
+<div class="container my-5">
+    <h2 class="fw-bold text-center mb-4">Customize Your Own Itinerary</h2>
+
+    <div class="bg-light rounded shadow-sm p-4">
+
+        <div class="row g-3 align-items-end">
+
+            <div class="col-md-3">
+                <label class="fw-semibold">Travel Dates</label>
+                <input type="date" class="form-control">
+            </div>
+
+            <div class="col-md-3">
+                <label class="fw-semibold">Travellers</label>
+                <input type="number" class="form-control" placeholder="Enter number">
+            </div>
+
+            <div class="col-md-3">
+                <label class="fw-semibold">Budget (per person)</label>
+                <input type="range" class="form-range" min="5000" max="200000">
+            </div>
+
+            <div class="col-md-3 d-grid">
+                <button class="btn btn-primary fw-bold">Get Customized Quote</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- WHY BOOK WITH 247Trips -->
+<div class="container my-5">
+    <h2 class="fw-bold text-center mb-4">Why Book With 247Trips?</h2>
+
+    <div class="row text-center g-4">
+
+        <div class="col-md-3 p-3"
+             onmouseenter="glowIn(this)" onmouseleave="glowOut(this)">
+            <div class="fs-1 text-primary mb-2">⭐</div>
+            <h6 class="fw-bold">Trusted Brand</h6>
+            <p class="small text-muted">Millions of happy travellers</p>
+        </div>
+
+        <div class="col-md-3 p-3"
+             onmouseenter="glowIn(this)" onmouseleave="glowOut(this)">
+            <div class="fs-1 text-primary mb-2">💼</div>
+            <h6 class="fw-bold">All-Inclusive Packages</h6>
+            <p class="small text-muted">Flights, Hotels & Tours</p>
+        </div>
+
+        <div class="col-md-3 p-3"
+             onmouseenter="glowIn(this)" onmouseleave="glowOut(this)">
+            <div class="fs-1 text-primary mb-2">💳</div>
+            <h6 class="fw-bold">Secure Payments</h6>
+            <p class="small text-muted">Safe & simple checkout</p>
+        </div>
+
+        <div class="col-md-3 p-3"
+             onmouseenter="glowIn(this)" onmouseleave="glowOut(this)">
+            <div class="fs-1 text-primary mb-2">🎧</div>
+            <h6 class="fw-bold">24/7 Support</h6>
+            <p class="small text-muted">Real person assistance</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- FAQ -->
+<div class="container my-5">
+    <h2 class="fw-bold text-center mb-4">Frequently Asked Questions</h2>
+
+    <div class="accordion" id="holidayFaq">
+
+        <div class="accordion-item border-0 shadow-sm mb-3">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#hf1">
+                    What’s included in holiday packages?
+                </button>
+            </h2>
+            <div id="hf1" class="accordion-collapse collapse" data-bs-parent="#holidayFaq">
+                <div class="accordion-body">
+                    Packages typically include flights, hotels, transfers, tours & meals.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item border-0 shadow-sm mb-3">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#hf2">
+                    Can I customize my itinerary?
+                </button>
+            </h2>
+            <div id="hf2" class="accordion-collapse collapse" data-bs-parent="#holidayFaq">
+                <div class="accordion-body">
+                    Yes! Tell us your preferences and get a custom quote.
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    </main>
+
+    <footer class="bg-dark text-white mt-5" >
+        <div class="container-fluid px-5 py-5">
+
+            <div class="row">
+
+                <!-- Left Menu -->
+                <div class="col-md-3 border-end border-secondary">
+                    <ul class="list-unstyled fw-semibold">
+                        <li class="py-2 text-primary">OUR OFFERINGS</li>
+                        <li class="py-2">About Us</li>
+                        <li class="py-2">Popular Destinations</li>
+                        <li class="py-2">International Destinations</li>
+                        <li class="py-2">Popular Airlines</li>
+                        <li class="py-2">Connect With Us</li>
+                        <li class="py-2">Offers</li>
+                    </ul>
+                </div>
+
+                <!-- Products -->
+                <div class="col-md-9">
+                    <h5 class="mb-4 fw-bold">Make your travel easy with a wide range of products and services.</h5>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p>
+                            <a class="text-white text-decoration-none" href="flight.html">Flights</a>
+                            </p>
+                            <p>
+                                <a class="text-white text-decoration-none" href="bus.html">Bus</a>
+                            </p>
+                            <p>Travel Guides</p>
+                            <p>Travel Updates</p>
+                            <p>VIP Cabs <span class="badge bg-danger">NEW</span></p>
+                        </div>
+
+                        <div class="col-md-3">
+                            <p>
+                                <a class="text-white text-decoration-none" href="hotel.html">Hotels</a>
+                            </p>
+                            <p><a class="text-white text-decoration-none" href="cab.html">Cabs</a></p>
+                            <p>Check PNR Status</p>
+                            <p>Corporate Travel</p>
+                        </div>
+
+                        <div class="col-md-3">
+                            <p>
+                                <a class="text-white text-decoration-none" href="train.html">Trains</a>
+                            </p>
+                            <p>Airlines</p>
+                        </div>
+
+                        <div class="col-md-3">
+                            <p><a class="text-white text-decoration-none" href="holiday.html">Holidays</a></p>
+                            <p>Airports</p>
+                            <p>Flight Check-in</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="border-secondary">
+
+            <div class="row align-items-center">
+
+                <!-- Company Info -->
+                <div class="col-md-6">
+                    <h3 class="fw-bold">247Trips</h3>
+                    <p class="small text-secondary">
+                        247Trips offers end-to-end travel solutions including airline tickets, hotel bookings, cab services, bus tickets, railway tickets and holiday packages across India and worldwide.
+                    </p>
+                </div>
+
+            </div>
+
+            <hr class="border-secondary">
+
+            <div class="text-center text-secondary small">
+                © 2026 247Trips.com — All Rights Reserved
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Visual Studio Browser Link -->
+<script type="text/javascript" src="/_vs/browserLink" async="async" id="__browserLink_initializationData" data-requestId="a82d55e5eff342978ce3c6fee8c22cb1" data-requestMappingFromServer="false" data-connectUrl="http://localhost:64979/f53701e45e1d4c45ae06e5cf43efe801/browserLink"></script>
+<!-- End Browser Link -->
+<script src="/_framework/aspnetcore-browser-refresh.js"></script></body>
+
+
+</html>
+<script>
+    // Glow effect on hover
+    function glowIn(el) {
+        el.style.boxShadow = "0 0 25px rgba(13,110,253,0.6)";
+        el.style.transform = "translateY(-8px)";
+        el.style.transition = "0.4s";
+    }
+
+    function glowOut(el) {
+        el.style.boxShadow = "none";
+        el.style.transform = "translateY(0px)";
+    }
+
+    // Icon animation
+    function iconMove(el) {
+        el.style.transform = "scale(1.2) rotate(5deg)";
+    }
+
+    function iconBack(el) {
+        el.style.transform = "scale(1) rotate(0deg)";
+    }
+</script>
