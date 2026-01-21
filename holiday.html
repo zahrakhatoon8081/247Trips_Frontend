@@ -130,8 +130,7 @@
     <main class="container-fluid px-0">
         
 <!-- HERO / SEARCH -->
-<div class="container-fluid py-5 text-white"
-     style="background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center/cover; min-height:480px;">
+<div class="container-fluid py-5 text-white">
 
     <div class="container py-5 bg-dark bg-opacity-50 rounded">
 
@@ -144,16 +143,17 @@
             </div>
 
             <!-- SEARCH FORM -->
-            <div class="bg-white rounded shadow-lg p-4">
+            <div class="bg-white rounded shadow-lg p-4" onmouseenter="glowIn(this)"
+                 onmouseleave="glowOut(this)">
 
                 <div class="row g-3 align-items-center">
 
-                    <div class="col-md-3">
+                    <div class="col-md-3 d-flex flex-column justify-content-center">
                         <label class="fw-semibold">Destination</label>
                         <input class="form-control" placeholder="Enter destination">
                     </div>
 
-                    <div class="col-md-2">
+                    <div class="col-md-2 d-flex flex-column justify-content-center">
                         <label class="fw-semibold">Start Date</label>
                         <input class="form-control" type="date">
                     </div>
@@ -179,8 +179,12 @@
                         </select>
                     </div>
 
-                    <div class="col-md-2 d-grid">
-                        <button class="btn btn-warning fw-bold fs-5">Search</button>
+                    <div class="col-md-2 d-flex mt-4">
+                        <button class="btn fw-bold text-white fs-5"
+                                style="background:linear-gradient(90deg,#0d6efd,#3d8bfd);
+                                    box-shadow:0 15px 35px rgba(13,110,253,0.45);">
+                            Search
+                        </button>
                     </div>
 
                 </div>
@@ -192,38 +196,203 @@
 </div>
 
 <!-- TOP PACKAGES -->
-
-<!-- CUSTOMIZE ITINERARY -->
 <div class="container my-5">
-    <h2 class="fw-bold text-center mb-4">Customize Your Own Itinerary</h2>
+    <h2 class="fw-bold text-center mb-4">Top Holiday Packages</h2>
+    <div class="d-flex flex-wrap gap-3 justify-content-center my-4">
 
-    <div class="bg-light rounded shadow-sm p-4">
+        <button class="btn btn-outline-primary rounded-pill px-4 fw-semibold"
+                onmouseenter="glowIn(this)"
+                onmouseleave="glowOut(this)">
+            All
+        </button>
 
-        <div class="row g-3 align-items-end">
+        <button class="btn btn-outline-primary rounded-pill px-4 fw-semibold"
+                onmouseenter="glowIn(this)"
+                onmouseleave="glowOut(this)">
+            Beach
+        </button>
 
-            <div class="col-md-3">
-                <label class="fw-semibold">Travel Dates</label>
-                <input type="date" class="form-control">
+        <button class="btn btn-outline-primary rounded-pill px-4 fw-semibold"
+                onmouseenter="glowIn(this)"
+                onmouseleave="glowOut(this)">
+            Honeymoon
+        </button>
+
+        <button class="btn btn-outline-primary rounded-pill px-4 fw-semibold"
+                onmouseenter="glowIn(this)"
+                onmouseleave="glowOut(this)">
+            Family
+        </button>
+
+        <button class="btn btn-outline-primary rounded-pill px-4 fw-semibold"
+                onmouseenter="glowIn(this)"
+                onmouseleave="glowOut(this)">
+            Adventure
+        </button>
+
+        <button class="btn btn-outline-primary rounded-pill px-4 fw-semibold"
+                onmouseenter="glowIn(this)"
+                onmouseleave="glowOut(this)">
+            Luxury
+        </button>
+
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-3">
+            <div class="card rounded shadow-sm"
+                 onmouseenter="glowIn(this)" onmouseleave="glowOut(this)">
+                <img src="https://images.unsplash.com/photo-1496566084516-c5b96fcbd5c8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Z29hJTIwYmVhY2h8ZW58MHx8MHx8fDA%3D"
+                     class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Goa Beach Escape</h5>
+                    <p class="card-text">4 Nights • 5 Days • Flights + Hotel • Breakfast</p>
+                    <p class="text-primary fw-bold">₹24,999 per person</p>
+                    <a class="btn btn-outline-primary w-100">View Details</a>
+                </div>
             </div>
+        </div>
 
-            <div class="col-md-3">
-                <label class="fw-semibold">Travellers</label>
-                <input type="number" class="form-control" placeholder="Enter number">
+        <div class="col-md-3">
+            <div class="card rounded shadow-sm"
+                 onmouseenter="glowIn(this)" onmouseleave="glowOut(this)">
+                <img src="https://images.unsplash.com/photo-1726266140611-90e75629f2a7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFuYWxpJTIwYWR2ZW50dXJlJTIwdHJpcHxlbnwwfHwwfHx8MA%3D%3D"
+                     class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Manali Adventure Trip</h5>
+                    <p class="card-text">5 Nights • 6 Days • Volvo + Sightseeing</p>
+                    <p class="text-primary fw-bold">₹19,499 per person</p>
+                    <a class="btn btn-outline-primary w-100">View Details</a>
+                </div>
             </div>
+        </div>
 
-            <div class="col-md-3">
-                <label class="fw-semibold">Budget (per person)</label>
-                <input type="range" class="form-range" min="5000" max="200000">
+        <div class="col-md-3">
+            <div class="card rounded shadow-sm"
+                 onmouseenter="glowIn(this)" onmouseleave="glowOut(this)">
+                <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80"
+                     class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold ">Dubai Luxury Holiday</h5>
+                    <p class="card-text">6 Nights • 7 Days • Flights + 5★ Hotel • Visa</p>
+                    <p class="text-primary fw-bold mt-0">₹89,999 per person</p>
+                    <a class="btn btn-outline-primary w-100">View Details</a>
+                </div>
             </div>
-
-            <div class="col-md-3 d-grid">
-                <button class="btn btn-primary fw-bold">Get Customized Quote</button>
+        </div>
+        <div class="col-md-3">
+            <div class="card rounded shadow-sm"
+                 onmouseenter="glowIn(this)" onmouseleave="glowOut(this)">
+                <img src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8S2FzaG1pcnxlbnwwfHwwfHx8MA%3D%3D"
+                     class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold ">Kashmir Family Holiday</h5>
+                    <p class="card-text">6 Nights • 7 Days • Flights + 5★ Hotel • Breakfast </p>
+                    <p class="text-primary fw-bold mt-0">₹89,999 per person</p>
+                    <a class="btn btn-outline-primary w-100">View Details</a>
+                </div>
             </div>
-
         </div>
 
     </div>
 </div>
+<div class="container my-5">
+
+    <!-- Heading -->
+    <div class="text-center mb-4">
+        <h2 class="fw-bold">Customize Your Own Itinerary</h2>
+        <p class="text-muted">
+            Choose your preferences and we'll plan the perfect trip for you.
+        </p>
+    </div>
+
+    <!-- Card -->
+    <div class="bg-white rounded-4 shadow-lg p-4 p-md-5"
+         onmouseenter="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.12)'"
+         onmouseleave="this.style.boxShadow='0 10px 25px rgba(0,0,0,0.08)'">
+
+        <!-- Row 1 -->
+        <div class="row g-4 mb-3">
+
+            <div class="col-md-3">
+                <label class="fw-semibold text-uppercase small">Travel Dates</label>
+                <input type="date" class="form-control rounded-3">
+            </div>
+
+            <div class="col-md-3">
+                <label class="fw-semibold text-uppercase small">Travellers</label>
+                <input type="number" class="form-control rounded-3" placeholder="e.g. 2">
+            </div>
+
+            <div class="col-md-3">
+                <label class="fw-semibold text-uppercase small">Rooms</label>
+                <input type="number" class="form-control rounded-3" placeholder="e.g. 1">
+            </div>
+
+            <div class="col-md-3">
+                <label class="fw-semibold text-uppercase small">Hotel Category</label>
+                <select class="form-select rounded-3">
+                    <option>Select</option>
+                    <option>3 Star</option>
+                    <option>4 Star</option>
+                    <option>5 Star</option>
+                </select>
+            </div>
+
+        </div>
+
+        <!-- Row 2 -->
+        <div class="row g-4 align-items-end">
+
+            <div class="col-md-4">
+                <label class="fw-semibold text-uppercase small">
+                    Budget (Per Person)
+                    <span class="float-end fw-bold text-primary">₹50,000</span>
+                </label>
+                <input type="range" class="form-range" min="5000" max="200000">
+                <div class="d-flex justify-content-between small text-muted">
+                    <span>₹5,000</span>
+                    <span>₹2,00,000+</span>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <label class="fw-semibold text-uppercase small">Transport</label>
+                <select class="form-select rounded-3">
+                    <option>Select</option>
+                    <option>Flight</option>
+                    <option>Train</option>
+                    <option>Bus</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label class="fw-semibold text-uppercase small">Meals</label>
+                <select class="form-select rounded-3">
+                    <option>Select</option>
+                    <option>Breakfast Only</option>
+                    <option>Breakfast & Dinner</option>
+                    <option>All Meals</option>
+                </select>
+            </div>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-4">
+            <button class="btn px-5 py-3 fw-bold rounded-pill text-white"
+                    onmouseenter="this.classList.add('shadow'); this.style.transform='translateY(-2px)'"
+                    onmouseleave="this.classList.remove('shadow'); this.style.transform='translateY(0)'"
+                    style="background:linear-gradient(90deg,#0d6efd,#3d8bfd);
+                    box-shadow:0 15px 35px rgba(13,110,253,0.45);">
+                Get Customized Quote
+            </button>
+        </div>
+
+    </div>
+</div>
+
 
 <!-- WHY BOOK WITH 247Trips -->
 <div class="container my-5">
@@ -261,39 +430,44 @@
 
     </div>
 </div>
-
-<!-- FAQ -->
+<!--  FAQ -->
 <div class="container my-5">
-    <h2 class="fw-bold text-center mb-4">Frequently Asked Questions</h2>
+    <h2 class="fw-bold text-center mb-4">FAQ's</h2>
 
-    <div class="accordion" id="holidayFaq">
+    <div class="accordion" id="faqAccordion">
 
-        <div class="accordion-item border-0 shadow-sm mb-3">
+        <!-- FAQ 1 -->
+        <div class="accordion-item shadow-sm mb-3 border-0">
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed fw-semibold"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#hf1">
+                        data-bs-target="#faq1"
+                        onmouseenter="faqHover(this)"
+                        onmouseleave="faqOut(this)">
                     What’s included in holiday packages?
                 </button>
             </h2>
-            <div id="hf1" class="accordion-collapse collapse" data-bs-parent="#holidayFaq">
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                 <div class="accordion-body">
                     Packages typically include flights, hotels, transfers, tours & meals.
                 </div>
             </div>
         </div>
 
-        <div class="accordion-item border-0 shadow-sm mb-3">
+        <!-- FAQ 2 -->
+        <div class="accordion-item shadow-sm mb-3 border-0">
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed fw-semibold"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#hf2">
+                        data-bs-target="#faq3"
+                        onmouseenter="faqHover(this)"
+                        onmouseleave="faqOut(this)">
                     Can I customize my itinerary?
                 </button>
             </h2>
-            <div id="hf2" class="accordion-collapse collapse" data-bs-parent="#holidayFaq">
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                 <div class="accordion-body">
                     Yes! Tell us your preferences and get a custom quote.
                 </div>
@@ -302,7 +476,21 @@
 
     </div>
 </div>
+<!--FAQ-->
+<script>
+    function faqHover(el) {
+        el.style.background = "#e7f1ff";
+        el.style.color = "#0d6efd";
+        el.style.boxShadow = "0 0 12px rgba(13,110,253,0.4)";
+        el.style.transition = "0.3s";
+    }
 
+    function faqOut(el) {
+        el.style.background = "";
+        el.style.color = "";
+        el.style.boxShadow = "none";
+    }
+</script>
     </main>
 
     <footer class="bg-dark text-white mt-5" >
@@ -393,7 +581,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Visual Studio Browser Link -->
-<script type="text/javascript" src="/_vs/browserLink" async="async" id="__browserLink_initializationData" data-requestId="a82d55e5eff342978ce3c6fee8c22cb1" data-requestMappingFromServer="false" data-connectUrl="http://localhost:64979/f53701e45e1d4c45ae06e5cf43efe801/browserLink"></script>
+<script type="text/javascript" src="/_vs/browserLink" async="async" id="__browserLink_initializationData" data-requestId="f2d38121652346f2860c20b507a476b4" data-requestMappingFromServer="false" data-connectUrl="http://localhost:64979/f53701e45e1d4c45ae06e5cf43efe801/browserLink"></script>
 <!-- End Browser Link -->
 <script src="/_framework/aspnetcore-browser-refresh.js"></script></body>
 
@@ -421,4 +609,3 @@
         el.style.transform = "scale(1) rotate(0deg)";
     }
 </script>
-
