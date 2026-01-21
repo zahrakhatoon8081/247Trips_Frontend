@@ -130,9 +130,7 @@
     <main class="container-fluid px-0">
         
 <!-- CABS HERO -->
-<div class="container-fluid py-5 text-white"
-     style="background:url('https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1600&q=80') center/cover; min-height:460px;">
-
+<div class="container-fluid py-5 text-white">
     <div class="container py-5 bg-dark bg-opacity-50 rounded">
 
         <div class="container">
@@ -155,7 +153,8 @@
             </div>
 
             <!-- Search Box -->
-            <div class="bg-white rounded shadow-lg p-4">
+            <div class="bg-white rounded shadow-lg p-4" onmouseenter="glowIn(this)"
+                 onmouseleave="glowOut(this)">
 
                 <h4 class="fw-bold mb-0 text-black">Search & Book Cabs</h4>
                 <p class="text-muted mb-4">Safe, reliable & affordable cab services</p>
@@ -183,7 +182,9 @@
                     </div>
 
                     <div class="col-md-1 d-grid">
-                        <button class="btn btn-warning fw-bold fs-5">
+                        <button class="btn fw-bold text-white fs-5"
+                                style="background:linear-gradient(90deg,#0d6efd,#3d8bfd);
+                                    box-shadow:0 15px 35px rgba(13,110,253,0.45);">
                             Search
                         </button>
                     </div>
@@ -306,30 +307,40 @@
 <div class="container my-5">
     <h2 class="fw-bold text-center mb-4">FAQ's</h2>
 
-    <div class="accordion" id="cabFaq">
+    <div class="accordion" id="faqAccordion">
 
-        <div class="accordion-item mb-3 border-0 shadow-sm">
+        <!-- FAQ 1 -->
+        <div class="accordion-item shadow-sm mb-3 border-0">
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed fw-semibold"
-                        data-bs-toggle="collapse" data-bs-target="#c1">
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq1"
+                        onmouseenter="faqHover(this)"
+                        onmouseleave="faqOut(this)">
                     How do I book a cab?
                 </button>
             </h2>
-            <div id="c1" class="accordion-collapse collapse" data-bs-parent="#cabFaq">
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                 <div class="accordion-body">
                     Enter pickup, drop, date & time and click search.
                 </div>
             </div>
         </div>
 
-        <div class="accordion-item mb-3 border-0 shadow-sm">
+        <!-- FAQ 2 -->
+        <div class="accordion-item shadow-sm mb-3 border-0">
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed fw-semibold"
-                        data-bs-toggle="collapse" data-bs-target="#c2">
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq3"
+                        onmouseenter="faqHover(this)"
+                        onmouseleave="faqOut(this)">
                     Are drivers verified?
                 </button>
             </h2>
-            <div id="c2" class="accordion-collapse collapse" data-bs-parent="#cabFaq">
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                 <div class="accordion-body">
                     Yes, all drivers are verified and trained for safety.
                 </div>
@@ -338,7 +349,21 @@
 
     </div>
 </div>
+<!--FAQ-->
+<script>
+    function faqHover(el) {
+        el.style.background = "#e7f1ff";
+        el.style.color = "#0d6efd";
+        el.style.boxShadow = "0 0 12px rgba(13,110,253,0.4)";
+        el.style.transition = "0.3s";
+    }
 
+    function faqOut(el) {
+        el.style.background = "";
+        el.style.color = "";
+        el.style.boxShadow = "none";
+    }
+</script>
     </main>
 
     <footer class="bg-dark text-white mt-5" >
@@ -429,7 +454,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Visual Studio Browser Link -->
-<script type="text/javascript" src="/_vs/browserLink" async="async" id="__browserLink_initializationData" data-requestId="1732c83383494ab68c17deb0ca9d4654" data-requestMappingFromServer="false" data-connectUrl="http://localhost:64979/f53701e45e1d4c45ae06e5cf43efe801/browserLink"></script>
+<script type="text/javascript" src="/_vs/browserLink" async="async" id="__browserLink_initializationData" data-requestId="6fa962215fbc45e4bb22a05d8d5573c9" data-requestMappingFromServer="false" data-connectUrl="http://localhost:64979/f53701e45e1d4c45ae06e5cf43efe801/browserLink"></script>
 <!-- End Browser Link -->
 <script src="/_framework/aspnetcore-browser-refresh.js"></script></body>
 
@@ -457,5 +482,3 @@
         el.style.transform = "scale(1) rotate(0deg)";
     }
 </script>
-
-
