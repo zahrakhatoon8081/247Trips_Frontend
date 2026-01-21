@@ -45,7 +45,8 @@
                         </a>
 
                     </li>
-<li class="nav-item text-center">
+
+                    <li class="nav-item text-center">
                         <a class="nav-link fw-semibold d-flex flex-column align-items-center" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="bus.html">
                             <i class="bi bi-bus-front fs-5 mb-0"
                                onmouseenter="iconMove(this)"
@@ -53,6 +54,7 @@
                             <span class="small">Bus</span>
                         </a>
                     </li>
+
                     <li class="nav-item text-center">
                         <a class="nav-link fw-semibold d-flex flex-column align-items-center" onmouseenter="glowIn(this)" onmouseleave="glowOut(this)" href="train.html">
                             <i class="bi bi-train-front fs-5 mb-0"
@@ -131,7 +133,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- HERO -->
-<div class="bg-dark text-white text-center py-5" style="background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover;">
+<div class="text-white text-center py-5">
     <div class="container py-5 bg-dark bg-opacity-50 rounded">
         <h1 class="fw-bold">Travel Smarter with 247Trips</h1>
         <p class="lead">Flights • Hotels • Holiday Packages</p>
@@ -142,15 +144,16 @@
             <input type="radio" class="btn-check" name="TripType" id="roundTrip">
             <label class="btn btn-outline-light btn-sm" for="roundTrip">Round Trip</label>
 
-            <input type="radio" class="btn-check" name="TripType" id="multiCity">
+            <input type="radio" class="btn-check" name="TripType" id="multiCity"
+                   onclick="setTripType('multicity')">
             <label class="btn btn-outline-light btn-sm" for="multiCity">Multicity</label>
         </div>
         <form method="post" action="/Flight/Search">
 
             <div class="card shadow overflow-hidden"
                  style="transition: transform .35s ease;"
-                 onmouseover="this.style.transform='scale(1.02)'"
-                 onmouseout="this.style.transform='scale(1)'">
+                 onmouseenter="glowIn(this)"
+                 onmouseleave="glowOut(this)">
 
                 <div class="card-body p-0">
                     <div class="row g-0 align-items-stretch">
@@ -162,22 +165,15 @@
                         <div class="col-md-2 border-end p-3 position-relative">
                             <small class="text-muted fw-semibold">FROM</small>
                             <input type="text" class="form-control border-0 p-0 fw-bold"
-                                   id="fromCity" name="FromCity"
+                                   name="FromCity"
                                    placeholder="Search City" autocomplete="off" required />
-                            <div id="fromDropdown"
-                                 class="position-absolute bg-white shadow rounded w-100 d-none z-3"
-                                 style="top:100%;"></div>
                         </div>
 
                         <!-- TO -->
                         <div class="col-md-2 border-end p-3 position-relative">
                             <small class="text-muted fw-semibold">TO</small>
-                            <input type="text" class="form-control border-0 p-0 fw-bold"
-                                   id="toCity" name="ToCity"
+                            <input type="text" class="form-control border-0 p-0 fw-bold" name="ToCity"
                                    placeholder="Search City" autocomplete="off" required />
-                            <div id="toDropdown"
-                                 class="position-absolute bg-white shadow rounded w-100 d-none z-3"
-                                 style="top:100%;"></div>
                         </div>
 
                         <!-- DEPART -->
@@ -209,7 +205,9 @@
 
                         <!-- SEARCH -->
                         <div class="col-md-2 d-flex">
-                            <button type="submit" class="btn btn-warning fw-bold fs-4 w-100 rounded-0">
+                            <button type="submit" class="btn fw-bold text-white fs-4 w-100 rounded-0"
+                                    style="background:linear-gradient(90deg,#0d6efd,#3d8bfd);
+                                    box-shadow:0 15px 35px rgba(13,110,253,0.45);">
                                 SEARCH
                             </button>
                         </div>
@@ -217,8 +215,37 @@
                     </div>
                 </div>
             </div>
+            <!-- MULTICITY SECTION -->
+            <div id="multiCityBox" class="card shadow mt-3 d-none">
+                <div class="card-body p-0" id="multiCityRows"></div>
+            </div>
+            <template id="multiCityRowTemplate">
+                <div class="row g-0 align-items-stretch border-bottom position-relative multi-row">
 
-        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8GqfEezGEtNHt7o4QPkF0hdqadNpU9sCkq1rdxPJf4RR8Y6tnl3INuA2nL3OZWwkfrQsArXdkeIHrhb4rhex9qXqamtIGVO5tZJQDOAccgOYPckfHz-Y1av5Q2VaiK5mErrPhEdMozxE-GAZRyvop6k" /></form>
+                    <div class="col-md-3 p-3 border-end">
+                        <small class="text-muted fw-semibold">FROM</small>
+                        <input class="form-control border-0 p-0 fw-bold" placeholder="Departure City">
+                    </div>
+
+                    <div class="col-md-3 p-3 border-end">
+                        <small class="text-muted fw-semibold">TO</small>
+                        <input class="form-control border-0 p-0 fw-bold" placeholder="Destination City">
+                    </div>
+
+                    <div class="col-md-3 p-3">
+                        <small class="text-muted fw-semibold">DEPARTURE DATE</small>
+                        <input type="date" class="form-control border-0 p-0 fw-bold">
+                    </div>
+
+                    <!-- ACTIONS -->
+                    <div class="col-md-3 p-3 d-flex align-items-center gap-3 actions"></div>
+
+                </div>
+            </template>
+
+
+
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8GqfEezGEtNHt7o4QPkF0hfoqwsZ41dWmSMQH0d4vvgsQ6TobnSyfOM8mtgZFJDn8XuIrU1DG8WSdnIovhitUYuU4-sIs6SincQSvYwu9qc2E-ff1ExKyX4qbKUNCxcE_dqmfRycHy0QBposUhNqwUQ" /></form>
 
     </div>
 </div>
@@ -230,7 +257,10 @@
                 <h5 class="fw-bold">Flight Cancellation Policy</h5>
                 <p class="text-muted">Tap to view full policy details</p>
 
-                <button class="btn btn-primary fw-bold" onclick="openPolicy()">
+                <button class="btn btn-primary fw-bold" onmouseenter="this.classList.add('shadow'); this.style.transform='translateY(-2px)'"
+                        onmouseleave="this.classList.remove('shadow'); this.style.transform='translateY(0)'" style="background:linear-gradient(90deg,#0d6efd,#3d8bfd);
+box-shadow:0 15px 35px rgba(13,110,253,0.45);"
+                        onclick="openPolicy()">
                     View Policy
                 </button>
             </div>
@@ -452,7 +482,7 @@
                     <p class="mb-0">3 Nights + Flights</p>
                     <span class="badge bg-danger mb-1">30% OFF</span>
                     <div class="mb-2">
-                        <a href="#" class="btn btn-primary w-100">Book Now</a>
+                        <a href="#" class="btn btn-outline-primary w-100">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -471,7 +501,7 @@
                     <p class="mb-0">5 Days Package</p>
                     <span class="badge bg-success mb-1">₹10,000 OFF</span>
                     <div class="mb-2">
-                        <a href="#" class="btn btn-primary w-100">Book Now</a>
+                        <a href="#" class="btn btn-outline-primary w-100">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -490,7 +520,7 @@
                     <p class="mb-0">Luxury Stays</p>
                     <span class="badge bg-warning mb-1">20% OFF</span>
                     <div class="mb-2">
-                        <a href="#" class="btn btn-primary w-100">Book Now</a>
+                        <a href="#" class="btn btn-outline-primary w-100">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -509,7 +539,7 @@
                     <p class="mb-0">5 Days Package</p>
                     <span class="badge bg-warning mb-1">30% OFF</span>
                     <div class="mb-2">
-                        <a href="#" class="btn btn-primary w-100">Book Now</a>
+                        <a href="#" class="btn btn-outline-primary w-100">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -837,61 +867,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<script>
-    function setupCityDropdown(inputId, dropdownId) {
-
-        const input = document.getElementById(inputId);
-        const dropdown = document.getElementById(dropdownId);
-
-        input.addEventListener("focus", () => fetchCities(""));
-        input.addEventListener("keyup", () => fetchCities(input.value));
-
-        function fetchCities(search) {
-            fetch(`/Flight/GetCities?term=${search}`)
-                .then(res => res.json())
-                .then(data => {
-                    dropdown.innerHTML = "";
-                    dropdown.classList.remove("d-none");
-
-                    data.forEach(city => {
-
-                        const item = document.createElement("div");
-                        item.className = "p-3 border-bottom";
-
-                        item.innerHTML = `
-                            <strong>${city.name} (${city.code})</strong><br/>
-                            <small class="text-muted">${city.airport}</small>
-                            <span class="float-end text-muted">${city.country}</span>
-                        `;
-
-                            item.addEventListener("click", () => {
-        input.value = `${city.name} (${city.code})`;
-
-        if (inputId === "fromCity") {
-            document.getElementById("FromCode").value = city.code;
-        } else {
-            document.getElementById("ToCode").value = city.code;
-        }
-
-        dropdown.classList.add("d-none");
-    });
-
-
-                        dropdown.appendChild(item);
-                    });
-                });
-        }
-
-        document.addEventListener("click", function (e) {
-            if (!input.contains(e.target) && !dropdown.contains(e.target)) {
-                dropdown.classList.add("d-none");
-            }
-        });
-    }
-
-    setupCityDropdown("fromCity", "fromDropdown");
-    setupCityDropdown("toCity", "toDropdown");
-</script>
+<!--round radio button-->
 <script>
     const oneWay = document.getElementById("oneWay");
     const roundTrip = document.getElementById("roundTrip");
@@ -1016,6 +992,77 @@
         el.style.boxShadow = "none";
     }
 </script>
+<!--Multicity radio button-->
+<script>
+    const maxCities = 6;
+    const multiCityBox = document.getElementById("multiCityBox");
+    const rowsContainer = document.getElementById("multiCityRows");
+    const template = document.getElementById("multiCityRowTemplate");
+
+    function setTripType(type) {
+        if (type === "multicity") {
+            multiCityBox.classList.remove("d-none");
+            rowsContainer.innerHTML = "";
+            addCity();
+            addCity();
+        } else {
+            multiCityBox.classList.add("d-none");
+        }
+    }
+
+    function addCity() {
+        const rowCount = rowsContainer.children.length;
+        if (rowCount >= maxCities) return;
+
+        const clone = template.content.cloneNode(true);
+        rowsContainer.appendChild(clone);
+        refreshActions();
+    }
+
+    function removeCity(btn) {
+        btn.closest(".multi-row").remove();
+        refreshActions();
+    }
+
+    function refreshActions() {
+        const rows = rowsContainer.querySelectorAll(".multi-row");
+
+        rows.forEach((row, index) => {
+            const actionBox = row.querySelector(".actions");
+            actionBox.innerHTML = "";
+
+            // REMOVE BUTTON (from 3rd row onward)
+            if (index >= 2) {
+                actionBox.innerHTML += `
+                    <button type="button"
+                        class="btn btn-light border rounded-circle"
+                        onclick="removeCity(this)">
+                        ×
+                    </button>`;
+            }
+
+            // LAST ROW → SEARCH + ADD CITY
+            if (index === rows.length - 1) {
+                actionBox.innerHTML += `
+                    <button class="btn text-white fw-bold px-4"
+                        style="background:#f37021;">
+                        SEARCH
+                    </button>`;
+
+                if (rows.length < maxCities) {
+                    actionBox.innerHTML += `
+                        <button type="button"
+                            class="btn btn-outline-primary fw-semibold"
+                            onclick="addCity()">
+                            + ADD CITY
+                        </button>`;
+                }
+            }
+        });
+    }
+</script>
+
+
 
 
 
@@ -1060,7 +1107,7 @@
                             <p>
                                 <a class="text-white text-decoration-none" href="hotel.html">Hotels</a>
                             </p>
-                            <p><a class="text-white text-decoration-none" href="Cab.html">Cabs</a></p>
+                            <p><a class="text-white text-decoration-none" href="cab.html">Cabs</a></p>
                             <p>Check PNR Status</p>
                             <p>Corporate Travel</p>
                         </div>
@@ -1109,7 +1156,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Visual Studio Browser Link -->
-<script type="text/javascript" src="/_vs/browserLink" async="async" id="__browserLink_initializationData" data-requestId="e07227ce52054ec58d337da7ac54d3f7" data-requestMappingFromServer="false" data-connectUrl="http://localhost:64979/f53701e45e1d4c45ae06e5cf43efe801/browserLink"></script>
+<script type="text/javascript" src="/_vs/browserLink" async="async" id="__browserLink_initializationData" data-requestId="f0bd794b7edd4ed893d7c2da348f3e0e" data-requestMappingFromServer="false" data-connectUrl="http://localhost:64979/f53701e45e1d4c45ae06e5cf43efe801/browserLink"></script>
 <!-- End Browser Link -->
 <script src="/_framework/aspnetcore-browser-refresh.js"></script></body>
 
@@ -1137,8 +1184,3 @@
         el.style.transform = "scale(1) rotate(0deg)";
     }
 </script>
-
-
-
-
-
